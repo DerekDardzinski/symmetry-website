@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+$sidebar-bg-color: rgba(0,0,0,0.75);
+$sidebar-color: rgba(200,200,200,1);
+$sidebar-width: 200px;
+$sidebar-collapsed-width: 80px;
+$highlight-color: #d8d8d8;
+$submenu-bg-color: rgba(0,0,0,0.00);
+$submenu-bg-color-collapsed: rgba(29, 29, 29, 0.95);
+$icon-bg-color: rgba(255, 255, 255, 0.05);
+$icon-size: 35px;
+$breakpoint-xs: 480px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
