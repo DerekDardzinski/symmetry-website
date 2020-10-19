@@ -1,3 +1,20 @@
+.pro-sidebar
+  .pro-menu
+  .pro-menu-item.pro-sub-menu
+  .pro-inner-list-item
+  .pro-inner-item:before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  min-width: 4px;
+  height: 4px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 50%;
+  margin-right: -5px;
+  position: relative;
+  box-shadow: none;
+}
+
 .Sidebar {
   height: 100vh;
   width: 200px;

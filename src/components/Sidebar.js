@@ -11,25 +11,70 @@ function Sidebar() {
         <Menu iconShape="square">
           <MenuItem>About</MenuItem>
           <SubMenu title="Triclinic">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>1</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>1</span>
+            </MenuItem>
           </SubMenu>
           <SubMenu title="Monoclinic">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>2/m</MenuItem>
+            <MenuItem>m</MenuItem>
+            <MenuItem>2</MenuItem>
           </SubMenu>
           <SubMenu title="Rhombohedral">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>3</span>m
+            </MenuItem>
+            <MenuItem>3m</MenuItem>
+            <MenuItem>32</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>3</span>
+            </MenuItem>
+            <MenuItem>3</MenuItem>
           </SubMenu>
           <SubMenu title="Hexagonal">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>6/mmm</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>6</span>m2
+            </MenuItem>
+            <MenuItem>6mm</MenuItem>
+            <MenuItem>622</MenuItem>
+            <MenuItem>6/m</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>6</span>
+            </MenuItem>
+            <MenuItem>6</MenuItem>
           </SubMenu>
           <SubMenu title="Orthorhombic">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>mmm</MenuItem>
+            <MenuItem>mm2</MenuItem>
+            <MenuItem>222</MenuItem>
           </SubMenu>
           <SubMenu title="Tetragonal">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>4/mmm</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>4</span>2m
+            </MenuItem>
+            <MenuItem>4mm</MenuItem>
+            <MenuItem>422</MenuItem>
+            <MenuItem>4/m</MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>4</span>
+            </MenuItem>
+            <MenuItem>4</MenuItem>
           </SubMenu>
           <SubMenu title="Cubic">
-            <MenuItem>Component 1</MenuItem>
+            <MenuItem>
+              m<span style={{ textDecoration: "overline" }}>3</span>m
+            </MenuItem>
+            <MenuItem>
+              <span style={{ textDecoration: "overline" }}>4</span>3m
+            </MenuItem>
+            <MenuItem>432</MenuItem>
+            <MenuItem>
+              m<span style={{ textDecoration: "overline" }}>3</span>
+            </MenuItem>
+            <MenuItem>23</MenuItem>
           </SubMenu>
         </Menu>
       </ProSidebar>
