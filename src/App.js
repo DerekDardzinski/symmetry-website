@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
-import AnimateTest from "./components/AnimateTest";
+import AnimateTest from "./components/axes/OrthoAxes";
 import Container from "react-bootstrap/Container";
 import "./App.css";
 import { Col, Row } from "react-bootstrap";
