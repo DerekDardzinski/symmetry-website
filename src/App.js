@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
-import AnimateTest from "./components/axes/OrthoAxes";
+import Axes from "./components/axes/Axes";
 import Container from "react-bootstrap/Container";
 import "./App.css";
 import { Col, Row } from "react-bootstrap";
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <AnimateTest />
+      <Axes />
     </div>
   );
 }
