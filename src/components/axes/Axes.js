@@ -2,18 +2,9 @@ import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { OrbitControls, softShadows } from "drei";
 import * as THREE from "three";
+import basicArgsObj from "./BasicParams";
+import { TwoFold, ThreeFold, FourFold, SixFold } from "./RotationSymbols";
 import "../style/AnimationTest.css";
-
-const basicArgsObj = {
-  radiusTop: 0.05,
-  radiusBottom: 0.05,
-  height: 5,
-  radialSegments: 60,
-  heightSegments: 60,
-  openEnded: false,
-  thetaStart: 0,
-  thetaLength: Math.PI * 2,
-};
 
 const basicArgs = [
   basicArgsObj.radiusTop,
@@ -28,44 +19,86 @@ const basicArgs = [
 
 const axisRotations = {
   x: [Math.PI / 2, Math.PI / 2, 0],
-  y: [0, Math.PI / 2, 0],
-  z: [0, 0, Math.PI / 2],
+  y: [0, 0, Math.PI / 2],
+  z: [0, Math.PI / 2, 0],
   bbrftl: [0, Math.PI / 4, Math.PI / 4],
   tbrfbl: [0, Math.PI / 4, -Math.PI / 4],
   bblftr: [0, -Math.PI / 4, Math.PI / 4],
   tblfbr: [0, -Math.PI / 4, -Math.PI / 4],
-  ha1: [Math.PI / 2, 0, 0],
-  ha2: [Math.PI / 2, 0, Math.PI / 3],
-  ha3: [Math.PI / 2, 0, (2 * Math.PI) / 3],
+  a1: [Math.PI / 2, 0, 0],
+  a2: [Math.PI / 2, 0, Math.PI / 3],
+  a3: [Math.PI / 2, 0, (2 * Math.PI) / 3],
 };
 
-const SixFold = ({ rotation, color, height }) => {
-  const edgeLength = 0.6;
-  var hexagon = new THREE.Shape();
-  hexagon.moveTo(0, edgeLength / 2);
-  hexagon.lineTo((-edgeLength * Math.sqrt(3)) / 4, edgeLength / 4);
-  hexagon.lineTo((-edgeLength * Math.sqrt(3)) / 4, -edgeLength / 4);
-  hexagon.moveTo(0, -edgeLength / 2);
-  hexagon.lineTo((edgeLength * Math.sqrt(3)) / 4, -edgeLength / 4);
-  hexagon.lineTo((edgeLength * Math.sqrt(3)) / 4, edgeLength / 4);
-
-  var extrudeSettings = {
-    steps: 5,
-    depth: 0.05,
-    bevelEnabled: false,
-  };
-  return (
-    <group rotation={rotation}>
-      <mesh castShadow position={[0, height, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <extrudeGeometry attach="geometry" args={[hexagon, extrudeSettings]} />
-        <meshStandardMaterial attach="material" color={color} />
-      </mesh>
-    </group>
-  );
+const planeRotations = {
+  two: [0, 0, 0],
+  four: [0, Math.PI / 2, 0],
 };
 
-const FourFold = ({ rotation, color, height }) => {
-  const edgeLength = 0.3;
+const axisProps = {
+  nonCubic: {
+    x: {
+      rotationSym: 4,
+      axisRotation: axisRotations.x,
+      rotationColor: "red",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.four,
+      planeRotation2: planeRotations.four,
+    },
+    y: {
+      rotationSym: 4,
+      axisRotation: axisRotations.y,
+      rotationColor: "blue",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.two,
+      planeRotation2: planeRotations.four,
+    },
+    z: {
+      rotationSym: 4,
+      axisRotation: axisRotations.z,
+      rotationColor: "green",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.two,
+      planeRotation2: planeRotations.four,
+    },
+  },
+  hexagonal: {
+    a1: {
+      rotationSym: 2,
+      axisRotation: axisRotations.a1,
+      rotationColor: "red",
+      planeColor: "red",
+      axisColor: "gray",
+    },
+    a2: {
+      rotationSym: 2,
+      axisRotation: axisRotations.a2,
+      rotationColor: "blue",
+      planeColor: "blue",
+      axisColor: "gray",
+    },
+    a3: {
+      rotationSym: 2,
+      axisRotation: axisRotations.a3,
+      rotationColor: "green",
+      planeColor: "green",
+      axisColor: "gray",
+    },
+    z: {
+      rotationSym: 6,
+      axisRotation: axisRotations.z,
+      rotationColor: "purple",
+      planeColor: "purple",
+      axisColor: "gray",
+    },
+  },
+};
+
+const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
+  const edgeLength = basicArgsObj.height / 1.2;
   var square = new THREE.Shape();
   square.moveTo(edgeLength / 2, edgeLength / 2);
   square.lineTo(edgeLength / 2, edgeLength / 2 - edgeLength);
@@ -78,80 +111,104 @@ const FourFold = ({ rotation, color, height }) => {
     bevelEnabled: false,
   };
   return (
-    <group rotation={rotation}>
-      <mesh castShadow position={[0, height, 0]} rotation={[Math.PI / 2, 0, 0]}>
+    <group position={[0, 0, 0]} rotation={axisRotation}>
+      <mesh position={[-0.025, 0, -0.025]} rotation={planeRotation}>
         <extrudeGeometry attach="geometry" args={[square, extrudeSettings]} />
-        <meshStandardMaterial attach="material" color={color} />
-      </mesh>
-    </group>
-  );
-};
-
-const ThreeFold = ({ rotation, color, height }) => {
-  const edgeLength = 0.4;
-  var triangle = new THREE.Shape();
-  triangle.moveTo(0, edgeLength);
-  triangle.lineTo((edgeLength * Math.sqrt(3)) / 2, -edgeLength / 2);
-  triangle.lineTo((-edgeLength * Math.sqrt(3)) / 2, -edgeLength / 2);
-
-  var extrudeSettings = {
-    steps: 5,
-    depth: 0.05,
-    bevelEnabled: false,
-  };
-  return (
-    <group rotation={rotation}>
-      <mesh castShadow position={[0, height, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <extrudeGeometry attach="geometry" args={[triangle, extrudeSettings]} />
-        <meshStandardMaterial attach="material" color={color} />
-      </mesh>
-    </group>
-  );
-};
-
-const TwoFold = ({ rotation, color, height }) => {
-  var ellipse = new THREE.EllipseCurve(0, 0, 0.2, 0.35, 0, Math.PI * 2);
-  var ellipseShape = new THREE.Shape(ellipse.getPoints(50));
-
-  var extrudeSettings = {
-    steps: 5,
-    depth: 0.05,
-    bevelEnabled: false,
-  };
-  return (
-    <group rotation={rotation}>
-      <mesh castShadow position={[0, height, 0]} rotation={[Math.PI / 2, 0, 0]}>
-        <extrudeGeometry
-          attach="geometry"
-          args={[ellipseShape, extrudeSettings]}
+        <meshLambertMaterial
+          attach="material"
+          color={color}
+          opacity={0.3}
+          transparent="true"
+          blending={THREE.NormalBlending}
         />
-        <meshStandardMaterial attach="material" color={color} />
       </mesh>
     </group>
   );
 };
 
-const AxisLine = ({ position, color, rotation, color2 }) => {
+const AxisLine = ({ props }) => {
   const mesh = useRef(null);
-  useFrame(() => (mesh.current.rotation.y += 0.002));
+  useFrame(() => (mesh.current.rotation.y += 0.0));
+  let rotationElement;
+  if (props.rotationSym === 1) {
+    rotationElement = <></>;
+  } else if (props.rotationSym === 2) {
+    rotationElement = (
+      <>
+        <TwoFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={basicArgsObj.height / 2.2}
+        />
+        <TwoFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={-basicArgsObj.height / 2.2}
+        />
+      </>
+    );
+  } else if (props.rotationSym === 3) {
+    rotationElement = (
+      <>
+        <ThreeFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={basicArgsObj.height / 2.2}
+        />
+        <ThreeFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={-basicArgsObj.height / 2.2}
+        />
+      </>
+    );
+  } else if (props.rotationSym === 4) {
+    console.log("Four fold");
+    rotationElement = (
+      <>
+        <FourFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={basicArgsObj.height / 2.2}
+        />
+        <FourFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={-basicArgsObj.height / 2.2}
+        />
+      </>
+    );
+  } else if (props.rotationSym === 6) {
+    rotationElement = (
+      <>
+        <SixFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={basicArgsObj.height / 2.2}
+        />
+        <SixFold
+          rotation={props.axisRotation}
+          color={props.rotationColor}
+          height={-basicArgsObj.height / 2.2}
+        />
+      </>
+    );
+  }
+
   return (
     <group ref={mesh}>
-      <TwoFold
-        rotation={rotation}
-        color={color2}
-        height={basicArgsObj.height / 2.2}
+      {rotationElement}
+      <MirrorPlane
+        axisRotation={props.axisRotation}
+        planeRotation={props.planeRotation1}
+        color={props.planeColor}
       />
-      <TwoFold
-        rotation={rotation}
-        color={color2}
-        height={-basicArgsObj.height / 2.2}
-      />
-      <mesh castShadow position={position} rotation={rotation}>
+      <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
           attach="material"
           side="DoubleSide"
-          color={color}
+          color={props.axisColor}
         />
       </mesh>
     </group>
@@ -198,48 +255,9 @@ function Axes() {
           </mesh>
         </group>
 
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.tblfbr}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.tbrfbl}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.bblftr}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.bbrftl}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.z}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.x}
-        />
-        <AxisLine
-          position={[0, 0, 0]}
-          color="gray"
-          color2="black"
-          rotation={axisRotations.y}
-        />
+        <AxisLine props={axisProps.nonCubic.x} />
+        <AxisLine props={axisProps.nonCubic.y} />
+        <AxisLine props={axisProps.nonCubic.z} />
         <OrbitControls />
       </Canvas>
     </div>
