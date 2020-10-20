@@ -21,10 +21,10 @@ const axisRotations = {
   x: [Math.PI / 2, Math.PI / 2, 0],
   y: [0, 0, Math.PI / 2],
   z: [0, Math.PI / 2, 0],
-  bbrftl: [0, Math.PI / 4, Math.PI / 4],
-  tbrfbl: [0, Math.PI / 4, -Math.PI / 4],
-  bblftr: [0, -Math.PI / 4, Math.PI / 4],
-  tblfbr: [0, -Math.PI / 4, -Math.PI / 4],
+  bbrftl: [0, Math.PI / 4, Math.PI / 3.3],
+  tbrfbl: [0, Math.PI / 4, -Math.PI / 3.3],
+  bblftr: [0, -Math.PI / 4, Math.PI / 3.3],
+  tblfbr: [0, -Math.PI / 4, -Math.PI / 3.3],
   a1: [Math.PI / 2, 0, 0],
   a2: [Math.PI / 2, 0, Math.PI / 3],
   a3: [Math.PI / 2, 0, (2 * Math.PI) / 3],
@@ -33,6 +33,9 @@ const axisRotations = {
 const planeRotations = {
   two: [0, 0, 0],
   four: [0, Math.PI / 2, 0],
+  fourdu: [0, Math.PI / 4, 0],
+  fourdd: [0, -Math.PI / 4, 0],
+  three: [0, Math.PI / 3, 0],
 };
 
 const axisProps = {
@@ -40,7 +43,7 @@ const axisProps = {
     x: {
       rotationSym: 4,
       axisRotation: axisRotations.x,
-      rotationColor: "red",
+      rotationColor: "black",
       planeColor: "gray",
       axisColor: "gray",
       planeRotation1: planeRotations.four,
@@ -69,9 +72,10 @@ const axisProps = {
     a1: {
       rotationSym: 2,
       axisRotation: axisRotations.a1,
-      rotationColor: "red",
-      planeColor: "red",
+      rotationColor: "black",
+      planeColor: "black",
       axisColor: "gray",
+      planeRotation1: planeRotations.four,
     },
     a2: {
       rotationSym: 2,
@@ -79,6 +83,7 @@ const axisProps = {
       rotationColor: "blue",
       planeColor: "blue",
       axisColor: "gray",
+      planeRotation1: planeRotations.four,
     },
     a3: {
       rotationSym: 2,
@@ -86,13 +91,134 @@ const axisProps = {
       rotationColor: "green",
       planeColor: "green",
       axisColor: "gray",
+      planeRotation1: planeRotations.four,
     },
     z: {
-      rotationSym: 6,
+      rotationSym: 3,
       axisRotation: axisRotations.z,
       rotationColor: "purple",
       planeColor: "purple",
       axisColor: "gray",
+      planeRotation1: planeRotations.four,
+    },
+  },
+  cubic: {
+    x: {
+      rotationSym: 4,
+      axisRotation: axisRotations.x,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.four,
+      hasPlane: true,
+    },
+    xdd: {
+      rotationSym: 4,
+      axisRotation: axisRotations.x,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdu,
+      hasPlane: true,
+    },
+    xdu: {
+      rotationSym: 4,
+      axisRotation: axisRotations.x,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdd,
+      hasPlane: true,
+    },
+    y: {
+      rotationSym: 4,
+      axisRotation: axisRotations.y,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.two,
+      hasPlane: true,
+    },
+    ydd: {
+      rotationSym: 4,
+      axisRotation: axisRotations.y,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdu,
+      hasPlane: true,
+    },
+    ydu: {
+      rotationSym: 4,
+      axisRotation: axisRotations.y,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdd,
+      hasPlane: true,
+    },
+    z: {
+      rotationSym: 4,
+      axisRotation: axisRotations.z,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.two,
+      hasPlane: true,
+    },
+    zdd: {
+      rotationSym: 4,
+      axisRotation: axisRotations.z,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdu,
+      hasPlane: true,
+    },
+    zdu: {
+      rotationSym: 4,
+      axisRotation: axisRotations.z,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.fourdd,
+      hasPlane: true,
+    },
+    bbrftl: {
+      rotationSym: 3,
+      axisRotation: axisRotations.bbrftl,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.three,
+      hasPlane: false,
+    },
+    bblftr: {
+      rotationSym: 3,
+      axisRotation: axisRotations.bblftr,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.three,
+      hasPlane: false,
+    },
+    tbrfbl: {
+      rotationSym: 3,
+      axisRotation: axisRotations.tbrfbl,
+      rotationColor: "black",
+      planeColor: "grey",
+      axisColor: "gray",
+      planeRotation1: planeRotations.three,
+      hasPlane: false,
+    },
+    tblfbr: {
+      rotationSym: 3,
+      axisRotation: axisRotations.tblfbr,
+      rotationColor: "black",
+      planeColor: "gray",
+      axisColor: "gray",
+      planeRotation1: planeRotations.three,
+      hasPlane: false,
     },
   },
 };
@@ -117,7 +243,7 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
         <meshLambertMaterial
           attach="material"
           color={color}
-          opacity={0.3}
+          opacity={0.5}
           transparent="true"
           blending={THREE.NormalBlending}
         />
@@ -128,7 +254,7 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
 
 const AxisLine = ({ props }) => {
   const mesh = useRef(null);
-  useFrame(() => (mesh.current.rotation.y += 0.0));
+  useFrame(() => (mesh.current.rotation.y += 0.005));
   let rotationElement;
   if (props.rotationSym === 1) {
     rotationElement = <></>;
@@ -195,14 +321,23 @@ const AxisLine = ({ props }) => {
     );
   }
 
-  return (
-    <group ref={mesh}>
-      {rotationElement}
+  let mirrorPlane;
+  if (props.hasPlane) {
+    mirrorPlane = (
       <MirrorPlane
         axisRotation={props.axisRotation}
         planeRotation={props.planeRotation1}
         color={props.planeColor}
       />
+    );
+  } else {
+    mirrorPlane = <></>;
+  }
+
+  return (
+    <group ref={mesh}>
+      {rotationElement}
+      {mirrorPlane}
       <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
@@ -255,9 +390,19 @@ function Axes() {
           </mesh>
         </group>
 
-        <AxisLine props={axisProps.nonCubic.x} />
-        <AxisLine props={axisProps.nonCubic.y} />
-        <AxisLine props={axisProps.nonCubic.z} />
+        <AxisLine props={axisProps.cubic.x} />
+        <AxisLine props={axisProps.cubic.xdd} />
+        <AxisLine props={axisProps.cubic.xdu} />
+        <AxisLine props={axisProps.cubic.y} />
+        <AxisLine props={axisProps.cubic.ydd} />
+        <AxisLine props={axisProps.cubic.ydu} />
+        <AxisLine props={axisProps.cubic.z} />
+        <AxisLine props={axisProps.cubic.zdd} />
+        <AxisLine props={axisProps.cubic.zdu} />
+        <AxisLine props={axisProps.cubic.bblftr} />
+        <AxisLine props={axisProps.cubic.bbrftl} />
+        <AxisLine props={axisProps.cubic.tblfbr} />
+        <AxisLine props={axisProps.cubic.tbrfbl} />
         <OrbitControls />
       </Canvas>
     </div>

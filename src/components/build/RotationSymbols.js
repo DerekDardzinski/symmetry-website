@@ -63,7 +63,11 @@ const ThreeFold = ({ rotation, color, height }) => {
   };
   return (
     <group rotation={rotation}>
-      <mesh castShadow position={[0, height, 0]} rotation={[Math.PI / 2, 0, 0]}>
+      <mesh
+        castShadow
+        position={[0, height, 0]}
+        rotation={[Math.PI / 2, 0, Math.PI / 6]}
+      >
         <extrudeGeometry attach="geometry" args={[triangle, extrudeSettings]} />
         <meshStandardMaterial attach="material" color={color} />
       </mesh>

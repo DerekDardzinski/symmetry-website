@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "./components/Sidebar";
-import Axes from "./components/axes/Axes";
+import Axes from "./components/build/Axes";
 import Container from "react-bootstrap/Container";
 import "./App.css";
 import { Col, Row } from "react-bootstrap";
