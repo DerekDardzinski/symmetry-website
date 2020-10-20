@@ -49,7 +49,7 @@ const FourFold = ({ rotation, color, height }) => {
   );
 };
 
-const ThreeFold = ({ rotation, color, height }) => {
+const ThreeFold = ({ rotation, color, height, shapeRotation }) => {
   const edgeLength = 0.4;
   var triangle = new THREE.Shape();
   triangle.moveTo(0, edgeLength);
@@ -66,7 +66,8 @@ const ThreeFold = ({ rotation, color, height }) => {
       <mesh
         castShadow
         position={[0, height, 0]}
-        rotation={[Math.PI / 2, 0, Math.PI / 6]}
+        rotation={shapeRotation}
+        // rotation={[Math.PI / 2, 0, Math.PI / 6]}
       >
         <extrudeGeometry attach="geometry" args={[triangle, extrudeSettings]} />
         <meshStandardMaterial attach="material" color={color} />
