@@ -3,8 +3,12 @@ import { Canvas, useFrame } from "react-three-fiber";
 import { OrbitControls, softShadows } from "drei";
 import * as THREE from "three";
 import basicArgsObj from "./BasicParams";
+import axisProps from "./AxesProps";
 import { TwoFold, ThreeFold, FourFold, SixFold } from "./RotationSymbols";
 import "../style/AnimationTest.css";
+import { matrix, multiply, squeeze } from "mathjs";
+
+// THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1);
 
 const basicArgs = [
   basicArgsObj.radiusTop,
@@ -17,229 +21,53 @@ const basicArgs = [
   basicArgsObj.thetaLength,
 ];
 
-const axisRotations = {
-  x: [Math.PI / 2, Math.PI / 2, 0],
-  y: [0, 0, Math.PI / 2],
-  z: [0, Math.PI / 2, 0],
-  bbrftl: [0, Math.PI / 4, Math.PI / 3.3],
-  tbrfbl: [0, Math.PI / 4, -Math.PI / 3.3],
-  bblftr: [0, -Math.PI / 4, Math.PI / 3.3],
-  tblfbr: [0, -Math.PI / 4, -Math.PI / 3.3],
-  a1: [Math.PI / 2, 0, 0],
-  a2: [Math.PI / 2, 0, Math.PI / 3],
-  a3: [Math.PI / 2, 0, (2 * Math.PI) / 3],
-};
+const mat = matrix([
+  [0, -1, 0],
+  [1, 0, 0],
+  [0, 0, 1],
+]);
 
-const planeRotations = {
-  two: [0, 0, 0],
-  four: [0, Math.PI / 2, 0],
-  fourdu: [0, Math.PI / 4, 0],
-  fourdd: [0, -Math.PI / 4, 0],
-  three: [0, Math.PI / 3, 0],
-};
+var positions = [];
+var positions2 = [];
+var i;
+const start = matrix([[1], [0.4], [0.5]]);
+const start2 = matrix([[1], [0.4], [-0.5]]);
+for (i = 1; i <= 4; i++) {
+  if (i === 1) {
+    positions.push(multiply(mat, start));
+    positions2.push(multiply(mat, start2));
+  } else {
+    positions.push(multiply(mat, positions.slice(-1)[0]));
+    positions2.push(multiply(mat, positions2.slice(-1)[0]));
+  }
+}
 
-const axisProps = {
-  nonCubic: {
-    x: {
-      rotationSym: 4,
-      axisRotation: axisRotations.x,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-      planeRotation2: planeRotations.four,
-    },
-    y: {
-      rotationSym: 4,
-      axisRotation: axisRotations.y,
-      rotationColor: "blue",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.two,
-      planeRotation2: planeRotations.four,
-    },
-    z: {
-      rotationSym: 4,
-      axisRotation: axisRotations.z,
-      rotationColor: "green",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.two,
-      planeRotation2: planeRotations.four,
-    },
-  },
-  hexagonal: {
-    a1: {
-      rotationSym: 2,
-      axisRotation: axisRotations.a1,
-      rotationColor: "black",
-      planeColor: "black",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-    },
-    a2: {
-      rotationSym: 2,
-      axisRotation: axisRotations.a2,
-      rotationColor: "blue",
-      planeColor: "blue",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-    },
-    a3: {
-      rotationSym: 2,
-      axisRotation: axisRotations.a3,
-      rotationColor: "green",
-      planeColor: "green",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-    },
-    z: {
-      rotationSym: 3,
-      axisRotation: axisRotations.z,
-      rotationColor: "purple",
-      planeColor: "purple",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-    },
-  },
-  cubic: {
-    x: {
-      rotationSym: 4,
-      axisRotation: axisRotations.x,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.four,
-      hasPlane: true,
-    },
-    xdd: {
-      rotationSym: 4,
-      axisRotation: axisRotations.x,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdu,
-      hasPlane: true,
-    },
-    xdu: {
-      rotationSym: 4,
-      axisRotation: axisRotations.x,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdd,
-      hasPlane: true,
-    },
-    y: {
-      rotationSym: 4,
-      axisRotation: axisRotations.y,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.two,
-      hasPlane: true,
-    },
-    ydd: {
-      rotationSym: 4,
-      axisRotation: axisRotations.y,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdu,
-      hasPlane: true,
-    },
-    ydu: {
-      rotationSym: 4,
-      axisRotation: axisRotations.y,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdd,
-      hasPlane: true,
-    },
-    z: {
-      rotationSym: 4,
-      axisRotation: axisRotations.z,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.two,
-      hasPlane: true,
-    },
-    zdd: {
-      rotationSym: 4,
-      axisRotation: axisRotations.z,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdu,
-      hasPlane: true,
-    },
-    zdu: {
-      rotationSym: 4,
-      axisRotation: axisRotations.z,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.fourdd,
-      hasPlane: true,
-    },
-    bbrftl: {
-      rotationSym: 3,
-      axisRotation: axisRotations.bbrftl,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.three,
-      hasPlane: false,
-    },
-    bblftr: {
-      rotationSym: 3,
-      axisRotation: axisRotations.bblftr,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.three,
-      hasPlane: false,
-    },
-    tbrfbl: {
-      rotationSym: 3,
-      axisRotation: axisRotations.tbrfbl,
-      rotationColor: "black",
-      planeColor: "grey",
-      axisColor: "gray",
-      planeRotation1: planeRotations.three,
-      hasPlane: false,
-    },
-    tblfbr: {
-      rotationSym: 3,
-      axisRotation: axisRotations.tblfbr,
-      rotationColor: "black",
-      planeColor: "gray",
-      axisColor: "gray",
-      planeRotation1: planeRotations.three,
-      hasPlane: false,
-    },
-  },
-};
+const arrayPositions = positions.map((x) => squeeze(x)._data);
+const arrayPositions2 = positions2.map((x) => squeeze(x)._data);
 
-let fourFold = new THREE.Matrix4();
-fourFold.set(0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 3, 0, -1);
+console.log(arrayPositions);
 
-let identity = new THREE.Matrix4();
-identity.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-console.log(fourFold);
-
-const Atom = ({ matrix, color, p }) => {
-  const sphere = useRef(null);
-  useFrame(() => console.log(sphere.current));
+const Atom = ({ color, position }) => {
   return (
-    <mesh ref={sphere} castShadow position={[0.6, p, 0.6]}>
-      <sphereBufferGeometry attach="geometry" args={[0.1, 30, 30]} />
-      <meshBasicMaterial attach="material" color={color} />
+    <mesh castShadow position={position}>
+      <sphereBufferGeometry attach="geometry" args={[0.2, 30, 30]} />
+      <meshStandardMaterial
+        side={THREE.DoubleSide}
+        attach="material"
+        color={color}
+      />
     </mesh>
   );
 };
+
+let atoms = [];
+arrayPositions.forEach((p) => {
+  atoms.push(<Atom color="red" position={p} />);
+});
+let atoms2 = [];
+arrayPositions2.forEach((p) => {
+  atoms2.push(<Atom color="red" position={p} />);
+});
 
 const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
   const edgeLength = basicArgsObj.height / 1.2;
@@ -261,9 +89,11 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
         <meshLambertMaterial
           attach="material"
           color={color}
-          opacity={0.5}
+          opacity={0.3}
           transparent="true"
-          blending={THREE.NormalBlending}
+          side={THREE.DoubleSide}
+          depthWrite={false}
+          // blending={THREE.NormalBlending}
         />
       </mesh>
     </group>
@@ -271,8 +101,8 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
 };
 
 const AxisLine = ({ props }) => {
-  const mesh = useRef(null);
-  useFrame(() => (mesh.current.rotation.y += 0.005));
+  const mesh = useRef();
+  useFrame(() => (mesh.current.rotation.z += 0.005));
   let rotationElement;
   if (props.rotationSym === 1) {
     rotationElement = <></>;
@@ -358,8 +188,8 @@ const AxisLine = ({ props }) => {
     <group ref={mesh}>
       {rotationElement}
       {mirrorPlane}
-      <Atom matrix={identity} color="green" p={0.2} />
-      <Atom matrix={fourFold} color="blue" p={0.5} />
+      {atoms}
+      {atoms2}
       <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
@@ -374,13 +204,13 @@ const AxisLine = ({ props }) => {
 
 softShadows();
 
-function Axes() {
+const Axes = () => {
   return (
     <div className="AnimationTest">
       <Canvas
         colorManagement
         shadowMap
-        camera={{ position: [-5, 2, 10], fov: 40 }}
+        camera={{ position: [5, 2, 10], fov: 40 }}
       >
         <ambientLight intensity={0.3} />
         <pointLight position={[0, 0, -20]} intensity={0.5} />
@@ -401,24 +231,26 @@ function Axes() {
           shadow-camera-bottom={-10}
         />
 
-        <group>
-          <mesh
-            receiveShadow
-            rotation={[-Math.PI / 2, 0, 0]}
-            position={[0, -3, 0]}
-          >
-            <planeBufferGeometry attach="geometry" args={[100, 100]} />
-            <shadowMaterial attach="material" opacity={0.3} />
-          </mesh>
-        </group>
+        <group rotation={[-Math.PI / 2, 0, -Math.PI / 2]}>
+          <group>
+            <mesh
+              receiveShadow
+              rotation={[-Math.PI / 2, 0, 0]}
+              position={[0, -3, 0]}
+            >
+              <planeBufferGeometry attach="geometry" args={[100, 100]} />
+              <shadowMaterial attach="material" opacity={0.3} />
+            </mesh>
+          </group>
 
-        <AxisLine props={axisProps.cubic.x} />
-        <AxisLine props={axisProps.cubic.y} />
-        <AxisLine props={axisProps.cubic.z} />
-        <OrbitControls />
+          <AxisLine props={axisProps.nonCubic.x} />
+          <AxisLine props={axisProps.nonCubic.y} />
+          <AxisLine props={axisProps.nonCubic.z} />
+          <OrbitControls />
+        </group>
       </Canvas>
     </div>
   );
-}
+};
 
 export default Axes;
