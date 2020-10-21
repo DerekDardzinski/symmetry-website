@@ -223,6 +223,24 @@ const axisProps = {
   },
 };
 
+let fourFold = new THREE.Matrix4();
+fourFold.set(0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 3, 0, -1);
+
+let identity = new THREE.Matrix4();
+identity.set(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+console.log(fourFold);
+
+const Atom = ({ matrix, color, p }) => {
+  const sphere = useRef(null);
+  useFrame(() => console.log(sphere.current));
+  return (
+    <mesh ref={sphere} castShadow position={[0.6, p, 0.6]}>
+      <sphereBufferGeometry attach="geometry" args={[0.1, 30, 30]} />
+      <meshBasicMaterial attach="material" color={color} />
+    </mesh>
+  );
+};
+
 const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
   const edgeLength = basicArgsObj.height / 1.2;
   var square = new THREE.Shape();
@@ -340,6 +358,8 @@ const AxisLine = ({ props }) => {
     <group ref={mesh}>
       {rotationElement}
       {mirrorPlane}
+      <Atom matrix={identity} color="green" p={0.2} />
+      <Atom matrix={fourFold} color="blue" p={0.5} />
       <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
@@ -393,18 +413,8 @@ function Axes() {
         </group>
 
         <AxisLine props={axisProps.cubic.x} />
-        <AxisLine props={axisProps.cubic.xdd} />
-        <AxisLine props={axisProps.cubic.xdu} />
         <AxisLine props={axisProps.cubic.y} />
-        <AxisLine props={axisProps.cubic.ydd} />
-        <AxisLine props={axisProps.cubic.ydu} />
         <AxisLine props={axisProps.cubic.z} />
-        <AxisLine props={axisProps.cubic.zdd} />
-        <AxisLine props={axisProps.cubic.zdu} />
-        <AxisLine props={axisProps.cubic.bblftr} />
-        <AxisLine props={axisProps.cubic.bbrftl} />
-        <AxisLine props={axisProps.cubic.tblfbr} />
-        <AxisLine props={axisProps.cubic.tbrfbl} />
         <OrbitControls />
       </Canvas>
     </div>
