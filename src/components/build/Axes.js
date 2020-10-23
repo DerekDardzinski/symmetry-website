@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Canvas, useFrame } from "react-three-fiber";
 import { OrbitControls, softShadows } from "drei";
 import * as THREE from "three";
@@ -6,9 +6,45 @@ import basicArgsObj from "./BasicParams";
 import axisProps from "./AxesProps";
 import { TwoFold, ThreeFold, FourFold, SixFold } from "./RotationSymbols";
 import "../style/AnimationTest.css";
-import { matrix, multiply, squeeze } from "mathjs";
+import { matrix } from "mathjs";
+import generatePointGroup from "./Generate";
+import MirrorPlane from "./MirrorPlanes";
+import tetragonalGroups from "./crystalSystems/Tetragonal";
 
 // THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1);
+
+softShadows();
+
+// const generators = {
+// // c: matrix([
+// // [-1, 0, 0],
+// // [0, 1, 0],
+// // [0, 0, -1],
+// // ]),
+// // g: matrix([
+// // [0, -1, 0],
+// // [1, 0, 0],
+// // [0, 0, 1],
+// // ]),
+// k: matrix([
+// [0, -1, 0],
+// [-1, 0, 0],
+// [0, 0, 1],
+// ]),
+// // h: matrix([
+// // [-1, 0, 0],
+// // [0, -1, 0],
+// // [0, 0, 1],
+// // ]),
+// n: matrix([
+// [-1 / 2, -Math.sqrt(3) / 2, 0],
+// [Math.sqrt(3) / 2, -1 / 2, 0],
+// [0, 0, 1],
+// ]),
+// };
+const generators = tetragonalGroups._4ommm;
+
+const generalPoint = matrix([[1.5], [0.5], [0.9]]);
 
 const basicArgs = [
   basicArgsObj.radiusTop,
@@ -20,32 +56,6 @@ const basicArgs = [
   basicArgsObj.thetaStart,
   basicArgsObj.thetaLength,
 ];
-
-const mat = matrix([
-  [0, -1, 0],
-  [1, 0, 0],
-  [0, 0, 1],
-]);
-
-var positions = [];
-var positions2 = [];
-var i;
-const start = matrix([[1], [0.4], [0.5]]);
-const start2 = matrix([[1], [0.4], [-0.5]]);
-for (i = 1; i <= 4; i++) {
-  if (i === 1) {
-    positions.push(multiply(mat, start));
-    positions2.push(multiply(mat, start2));
-  } else {
-    positions.push(multiply(mat, positions.slice(-1)[0]));
-    positions2.push(multiply(mat, positions2.slice(-1)[0]));
-  }
-}
-
-const arrayPositions = positions.map((x) => squeeze(x)._data);
-const arrayPositions2 = positions2.map((x) => squeeze(x)._data);
-
-console.log(arrayPositions);
 
 const Atom = ({ color, position }) => {
   return (
@@ -60,49 +70,15 @@ const Atom = ({ color, position }) => {
   );
 };
 
+const arrayPositions = generatePointGroup(generators, generalPoint);
+console.log(arrayPositions);
+
 let atoms = [];
 arrayPositions.forEach((p) => {
   atoms.push(<Atom color="red" position={p} />);
 });
-let atoms2 = [];
-arrayPositions2.forEach((p) => {
-  atoms2.push(<Atom color="red" position={p} />);
-});
-
-const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
-  const edgeLength = basicArgsObj.height / 1.2;
-  var square = new THREE.Shape();
-  square.moveTo(edgeLength / 2, edgeLength / 2);
-  square.lineTo(edgeLength / 2, edgeLength / 2 - edgeLength);
-  square.lineTo(edgeLength / 2 - edgeLength, edgeLength / 2 - edgeLength);
-  square.lineTo(edgeLength / 2 - edgeLength, edgeLength / 2);
-
-  var extrudeSettings = {
-    steps: 5,
-    depth: 0.05,
-    bevelEnabled: false,
-  };
-  return (
-    <group position={[0, 0, 0]} rotation={axisRotation}>
-      <mesh position={[-0.025, 0, -0.025]} rotation={planeRotation}>
-        <extrudeGeometry attach="geometry" args={[square, extrudeSettings]} />
-        <meshLambertMaterial
-          attach="material"
-          color={color}
-          opacity={0.3}
-          transparent="true"
-          side={THREE.DoubleSide}
-          depthWrite={false}
-          // blending={THREE.NormalBlending}
-        />
-      </mesh>
-    </group>
-  );
-};
 
 const AxisLine = ({ props }) => {
-  const mesh = useRef();
-  useFrame(() => (mesh.current.rotation.z += 0.005));
   let rotationElement;
   if (props.rotationSym === 1) {
     rotationElement = <></>;
@@ -185,11 +161,9 @@ const AxisLine = ({ props }) => {
   }
 
   return (
-    <group ref={mesh}>
+    <group>
       {rotationElement}
       {mirrorPlane}
-      {atoms}
-      {atoms2}
       <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
@@ -202,7 +176,18 @@ const AxisLine = ({ props }) => {
   );
 };
 
-softShadows();
+const PointGroup = () => {
+  // const mesh = useRef();
+  // useFrame(() => (mesh.current.rotation.z += 0.005));
+  return (
+    <group>
+      {atoms}
+      <AxisLine props={axisProps.nonCubic.z} />
+      <AxisLine props={axisProps.nonCubic.y} />
+      <AxisLine props={axisProps.nonCubic.x} />
+    </group>
+  );
+};
 
 const Axes = () => {
   return (
@@ -233,19 +218,17 @@ const Axes = () => {
 
         <group rotation={[-Math.PI / 2, 0, -Math.PI / 2]}>
           <group>
-            <mesh
-              receiveShadow
-              rotation={[-Math.PI / 2, 0, 0]}
-              position={[0, -3, 0]}
-            >
+            <mesh receiveShadow rotation={[0, 0, 0]} position={[0, 0, -3]}>
               <planeBufferGeometry attach="geometry" args={[100, 100]} />
-              <shadowMaterial attach="material" opacity={0.3} />
+              <shadowMaterial
+                attach="material"
+                opacity={0.3}
+                // color="yellow"
+              />
             </mesh>
           </group>
 
-          <AxisLine props={axisProps.nonCubic.x} />
-          <AxisLine props={axisProps.nonCubic.y} />
-          <AxisLine props={axisProps.nonCubic.z} />
+          <PointGroup />
           <OrbitControls />
         </group>
       </Canvas>

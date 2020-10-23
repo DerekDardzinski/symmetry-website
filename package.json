@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.5.3",
     "drei": "^1.5.7",
+    "esm": "^3.2.25",
     "mathjs": "^7.5.1",
     "node-sass": "^4.14.1",
     "react": "^16.14.0",

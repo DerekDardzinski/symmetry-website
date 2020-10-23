@@ -1,14 +1,14 @@
 const axisRotations = {
-  x: [Math.PI / 2, Math.PI / 2, 0],
-  y: [0, 0, Math.PI / 2],
-  z: [0, Math.PI / 2, 0],
+  x: [0, 0, Math.PI / 2],
+  y: [0, 0, 0],
+  z: [Math.PI / 2, 0, 0],
   bbrftl: [0, Math.PI / 4, Math.PI / 3.3],
   tbrfbl: [0, Math.PI / 4, -Math.PI / 3.3],
   bblftr: [0, -Math.PI / 4, Math.PI / 3.3],
   tblfbr: [0, -Math.PI / 4, -Math.PI / 3.3],
-  a1: [Math.PI / 2, 0, 0],
-  a2: [Math.PI / 2, 0, Math.PI / 3],
-  a3: [Math.PI / 2, 0, (2 * Math.PI) / 3],
+  a1: [0, 0, Math.PI / 2],
+  a2: [0, Math.PI / 3, Math.PI / 2],
+  a3: [(2 * Math.PI) / 3, 0, Math.PI / 2],
 };
 
 const planeRotations = {
@@ -33,7 +33,7 @@ const axisProps = {
     y: {
       rotationSym: 1,
       axisRotation: axisRotations.y,
-      rotationColor: "blue",
+      rotationColor: "black",
       planeColor: "gray",
       axisColor: "gray",
       planeRotation1: planeRotations.two,
@@ -42,7 +42,7 @@ const axisProps = {
     z: {
       rotationSym: 1,
       axisRotation: axisRotations.z,
-      rotationColor: "green",
+      rotationColor: "black",
       planeColor: "gray",
       axisColor: "gray",
       planeRotation1: planeRotations.two,
