@@ -5,46 +5,22 @@ import * as THREE from "three";
 import basicArgsObj from "./BasicParams";
 import axisProps from "./AxesProps";
 import { TwoFold, ThreeFold, FourFold, SixFold } from "./RotationSymbols";
-import "../style/AnimationTest.css";
-import { matrix } from "mathjs";
+import { matrix, multiply } from "mathjs";
 import generatePointGroup from "./Generate";
 import MirrorPlane from "./MirrorPlanes";
 import tetragonalGroups from "./crystalSystems/Tetragonal";
+import triclinicGroups from "./crystalSystems/Triclinic";
+import hexagonalGroups from "./crystalSystems/Hexagonal";
+import rhombohedralGroups from "./crystalSystems/Rhombohedral";
+import cubicGroups from "./crystalSystems/Cubic";
+import Atom from "./Atom";
 
-// THREE.Object3D.DefaultUp = new THREE.Vector3(0, 0, 1);
+const generators = cubicGroups._m3barm;
+// const generators = hexagonalGroups._6barm2;
+// const generators = rhombohedralGroups._32;
+// const generators = triclinicGroups._p1;
 
-softShadows();
-
-// const generators = {
-// // c: matrix([
-// // [-1, 0, 0],
-// // [0, 1, 0],
-// // [0, 0, -1],
-// // ]),
-// // g: matrix([
-// // [0, -1, 0],
-// // [1, 0, 0],
-// // [0, 0, 1],
-// // ]),
-// k: matrix([
-// [0, -1, 0],
-// [-1, 0, 0],
-// [0, 0, 1],
-// ]),
-// // h: matrix([
-// // [-1, 0, 0],
-// // [0, -1, 0],
-// // [0, 0, 1],
-// // ]),
-// n: matrix([
-// [-1 / 2, -Math.sqrt(3) / 2, 0],
-// [Math.sqrt(3) / 2, -1 / 2, 0],
-// [0, 0, 1],
-// ]),
-// };
-const generators = tetragonalGroups._4ommm;
-
-const generalPoint = matrix([[1.5], [0.5], [0.9]]);
+const generalPoint = matrix([[1.5], [0.3], [0.9]]);
 
 const basicArgs = [
   basicArgsObj.radiusTop,
@@ -57,21 +33,7 @@ const basicArgs = [
   basicArgsObj.thetaLength,
 ];
 
-const Atom = ({ color, position }) => {
-  return (
-    <mesh castShadow position={position}>
-      <sphereBufferGeometry attach="geometry" args={[0.2, 30, 30]} />
-      <meshStandardMaterial
-        side={THREE.DoubleSide}
-        attach="material"
-        color={color}
-      />
-    </mesh>
-  );
-};
-
-const arrayPositions = generatePointGroup(generators, generalPoint);
-console.log(arrayPositions);
+const arrayPositions = generatePointGroup(generators, generalPoint, false);
 
 let atoms = [];
 arrayPositions.forEach((p) => {
@@ -147,24 +109,35 @@ const AxisLine = ({ props }) => {
     );
   }
 
-  let mirrorPlane;
+  let mirrorPlanes;
   if (props.hasPlane) {
-    mirrorPlane = (
-      <MirrorPlane
-        axisRotation={props.axisRotation}
-        planeRotation={props.planeRotation1}
-        color={props.planeColor}
-      />
-    );
+    mirrorPlanes = [];
+    props.planes.forEach((r) => {
+      mirrorPlanes.push(
+        <MirrorPlane
+          axisRotation={props.axisRotation}
+          planeRotation={r}
+          color={props.planeColor}
+        />
+      );
+    });
   } else {
-    mirrorPlane = <></>;
+    mirrorPlanes = <></>;
   }
+  const q = new THREE.Quaternion(0.146, 0.354, 0.354, 0.854);
+  const axis = useRef(null);
+  useFrame(() => console.log(axis));
 
   return (
     <group>
       {rotationElement}
-      {mirrorPlane}
-      <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
+      {mirrorPlanes}
+      <mesh
+        ref={axis}
+        castShadow
+        position={[0, 0, 0]}
+        rotation={props.axisRotation}
+      >
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
           attach="material"
@@ -181,15 +154,25 @@ const PointGroup = () => {
   // useFrame(() => (mesh.current.rotation.z += 0.005));
   return (
     <group>
-      {atoms}
-      <AxisLine props={axisProps.nonCubic.z} />
-      <AxisLine props={axisProps.nonCubic.y} />
-      <AxisLine props={axisProps.nonCubic.x} />
+      <group rotation={[0, 0, 0]}>{atoms}</group>
+      <AxisLine props={axisProps.even.x} />
+      <AxisLine props={axisProps.even.xy} />
+      <AxisLine props={axisProps.even.nxy} />
+      <AxisLine props={axisProps.even.xz} />
+      <AxisLine props={axisProps.even.nxz} />
+      <AxisLine props={axisProps.even.yz} />
+      <AxisLine props={axisProps.even.nyz} />
+      <AxisLine props={axisProps.even.y} />
+      <AxisLine props={axisProps.even.z} />
+      <AxisLine props={axisProps.even.nnn_ppp} />
+      <AxisLine props={axisProps.even.nnp_ppn} />
+      <AxisLine props={axisProps.even.npn_pnp} />
+      <AxisLine props={axisProps.even.npp_pnn} />
     </group>
   );
 };
 
-const Axes = () => {
+const Axes = ({ props }) => {
   return (
     <div className="AnimationTest">
       <Canvas
@@ -227,6 +210,7 @@ const Axes = () => {
               />
             </mesh>
           </group>
+          {props.children}
 
           <PointGroup />
           <OrbitControls />
@@ -236,4 +220,4 @@ const Axes = () => {
   );
 };
 
-export default Axes;
+export default PointGroup;

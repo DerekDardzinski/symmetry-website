@@ -44,7 +44,7 @@ const generatorMatrices = {
   i: matrix([
     [1, 0, 0],
     [0, 1, 0],
-    [0, 0, 1],
+    [0, 0, -1],
   ]),
   j: matrix([
     [1, 0, 0],
@@ -55,6 +55,11 @@ const generatorMatrices = {
     [0, -1, 0],
     [-1, 0, 0],
     [0, 0, 1],
+  ]),
+  k2: matrix([
+    [0, 1, 0],
+    [1, 0, 0],
+    [0, 0, -1],
   ]),
   l: matrix([
     [0, 1, 0],
@@ -71,6 +76,11 @@ const generatorMatrices = {
     [1, -1, 0],
     [0, 0, 1],
   ]),
+  // n: matrix([
+  // [ -Math.sqrt(3) / 2, 0],
+  // [Math.sqrt(3) / 2, -1 / 2, 0],
+  // [0, 0, 1],
+  // ]),
 };
 
 export default generatorMatrices;

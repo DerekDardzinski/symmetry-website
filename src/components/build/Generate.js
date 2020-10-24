@@ -1,17 +1,7 @@
-import { matrix, multiply, squeeze } from "mathjs";
+import { matrix, multiply, squeeze, transpose } from "mathjs";
+import hexagonalGroups from "./crystalSystems/Hexagonal";
 
-const generators = {
-  g: matrix([
-    [0, -1, 0],
-    [1, 0, 0],
-    [0, 0, 1],
-  ]),
-  h: matrix([
-    [-1, 0, 0],
-    [0, -1, 0],
-    [0, 0, -1],
-  ]),
-};
+const generators = hexagonalGroups._6;
 
 const generalPoint = matrix([[1], [0.5], [0.3]]);
 
@@ -43,7 +33,7 @@ function applyGenerator(generator, generalPoint) {
   return [points, pointObjects];
 }
 
-function generatePointGroup(generators, generalPoint) {
+function generatePointGroup(generators, generalPoint, isHexagonal) {
   let totalPointObjects = [];
   let totalPoints = [];
   let groupPoints;
@@ -77,7 +67,24 @@ function generatePointGroup(generators, generalPoint) {
       }
     }
   }
-  return totalPoints;
+  if (isHexagonal) {
+    let hexPoints = [];
+    const hexTransform = matrix([
+      [Math.sqrt(3) / 2, 0, 0],
+      [-1 / 2, 1, 0],
+      [0, 0, 1],
+    ]);
+    for (var l = 0; l < totalPoints.length; l++) {
+      var hexPoint = squeeze(multiply(hexTransform, transpose(totalPoints[l])))
+        ._data;
+      hexPoints.push(hexPoint);
+    }
+    return hexPoints;
+  } else {
+    return totalPoints;
+  }
 }
+
+console.log(generatePointGroup(generators, generalPoint, true));
 
 export default generatePointGroup;

@@ -22,10 +22,10 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
         <meshLambertMaterial
           attach="material"
           color={color}
-          opacity={0.3}
+          opacity={0.6}
           transparent="true"
-          side={THREE.DoubleSide}
-          depthWrite={false}
+          // side={THREE.DoubleSide}
+          depthWrite={true}
           // blending={THREE.NormalBlending}
         />
       </mesh>
