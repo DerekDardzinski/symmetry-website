@@ -1,5 +1,6 @@
 .Display {
   height: 100vh;
   padding: 0;
-  margin-left: 270px;
+  /* margin-left: 80px; */
+  display: flex;
 }

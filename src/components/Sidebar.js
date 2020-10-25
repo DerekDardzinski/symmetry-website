@@ -2,15 +2,17 @@ import { ProSidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import "./style/Sidebar.scss";
 // import "react-pro-sidebar/dist/css/styles.css";
 import "./style/Sidebar.css";
+import background from "../images/SidebarBackground.svg";
+import SvgComponent from "../images/triclinic.js";
 import React, { useState } from "react";
 
 function Sidebar() {
   return (
     <div className="Sidebar">
-      <ProSidebar>
-        <Menu iconShape="square">
+      <ProSidebar collapsed={true} image={background}>
+        <Menu iconShape="circle">
           <MenuItem>About</MenuItem>
-          <SubMenu title="Triclinic">
+          <SubMenu icon={<SvgComponent />} title="Triclinic">
             <MenuItem>1</MenuItem>
             <MenuItem>
               <span style={{ textDecoration: "overline" }}>1</span>
