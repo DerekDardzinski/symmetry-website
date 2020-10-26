@@ -1,6 +1,6 @@
 import * as React from "react";
 
-function Triclinic(props) {
+function hexagonal(props) {
   return (
     <svg width="30mm" height="30mm" viewBox="0 0 30 30" {...props}>
       <defs>
@@ -36,7 +36,7 @@ function Triclinic(props) {
               InkscapeFontSpecification: "'DroidSansMono Nerd Font Mono'",
             }}
           >
-            {"a"}
+            {"h"}
           </tspan>
         </text>
       </g>
@@ -44,4 +44,4 @@ function Triclinic(props) {
   );
 }
 
-export default Triclinic;
+export default hexagonal;

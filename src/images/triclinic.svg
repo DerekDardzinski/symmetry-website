@@ -7,9 +7,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="46mm"
-   height="46mm"
-   viewBox="0 0 46 46"
+   width="30mm"
+   height="30mm"
+   viewBox="0 0 29.999999 30"
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (0767f8302a, 2020-10-17)">
@@ -36,8 +36,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35"
-     inkscape:cx="-755.66566"
-     inkscape:cy="181.01519"
+     inkscape:cx="-498.43321"
+     inkscape:cy="354.78896"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -67,7 +67,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-52.903801,-100.27306)">
+     transform="translate(-60.903801,-108.27306)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -87,22 +87,22 @@
        id="path26"
        cx="75.903801"
        cy="123.27306"
-       style="fill:#999999;stroke-width:0.264583"
-       r="23"
+       style="opacity:0.5;fill:#1a1a1a;stroke-width:0.264583"
        inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:export-ydpi="96"
+       r="15" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:'Noto Sans Old Turkic';-inkscape-font-specification:'Noto Sans Old Turkic';fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="68.326385"
-       y="130.37257"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'DroidSansMono Nerd Font Mono';-inkscape-font-specification:'DroidSansMono Nerd Font Mono';opacity:0.5;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="65.910583"
+       y="132.72966"
        id="text32"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
-         sodipodi:role="line"
          id="tspan30"
-         x="68.326385"
-         y="130.37257"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:25.4px;font-family:'Noto Sans Old Turkic';-inkscape-font-specification:'Noto Sans Old Turkic';fill:#e6e6e6;stroke-width:0.264583">a</tspan></text>
+         x="65.910583"
+         y="132.72966"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:35.2778px;font-family:'DroidSansMono Nerd Font Mono';-inkscape-font-specification:'DroidSansMono Nerd Font Mono';fill:#ffffff;stroke-width:0.264583"
+         sodipodi:role="line">a</tspan></text>
   </g>
 </svg>

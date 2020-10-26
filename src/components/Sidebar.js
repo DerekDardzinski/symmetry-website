@@ -3,27 +3,34 @@ import "./style/Sidebar.scss";
 // import "react-pro-sidebar/dist/css/styles.css";
 import "./style/Sidebar.css";
 import background from "../images/SidebarBackground.svg";
-import SvgComponent from "../images/triclinic.js";
+import Triclinic from "../images/triclinic";
+import Monoclinic from "../images/monoclinic";
+import Rhombohedral from "../images/rhombohedral";
+import Hexagonal from "../images/hexagonal";
+import Orthorhombic from "../images/orthorhombic";
+import Tetragonal from "../images/tetragonal";
+import Cubic from "../images/cubic";
+import About from "../images/about";
 import React, { useState } from "react";
 
 function Sidebar() {
   return (
     <div className="Sidebar">
       <ProSidebar collapsed={true} image={background}>
-        <Menu iconShape="circle">
-          <MenuItem>About</MenuItem>
-          <SubMenu icon={<SvgComponent />} title="Triclinic">
+        <Menu iconShape="square">
+          <MenuItem icon={<About />}>About</MenuItem>
+          <SubMenu icon={<Triclinic />} title="Triclinic">
             <MenuItem>1</MenuItem>
             <MenuItem>
               <span style={{ textDecoration: "overline" }}>1</span>
             </MenuItem>
           </SubMenu>
-          <SubMenu title="Monoclinic">
+          <SubMenu icon={<Monoclinic />} title="Monoclinic">
             <MenuItem>2/m</MenuItem>
             <MenuItem>m</MenuItem>
             <MenuItem>2</MenuItem>
           </SubMenu>
-          <SubMenu title="Rhombohedral">
+          <SubMenu icon={<Rhombohedral />} title="Rhombohedral">
             <MenuItem>
               <span style={{ textDecoration: "overline" }}>3</span>m
             </MenuItem>
@@ -34,7 +41,7 @@ function Sidebar() {
             </MenuItem>
             <MenuItem>3</MenuItem>
           </SubMenu>
-          <SubMenu title="Hexagonal">
+          <SubMenu icon={<Hexagonal />} title="Hexagonal">
             <MenuItem>6/mmm</MenuItem>
             <MenuItem>
               <span style={{ textDecoration: "overline" }}>6</span>m2
@@ -47,12 +54,12 @@ function Sidebar() {
             </MenuItem>
             <MenuItem>6</MenuItem>
           </SubMenu>
-          <SubMenu title="Orthorhombic">
+          <SubMenu icon={<Orthorhombic />} title="Orthorhombic">
             <MenuItem>mmm</MenuItem>
             <MenuItem>mm2</MenuItem>
             <MenuItem>222</MenuItem>
           </SubMenu>
-          <SubMenu title="Tetragonal">
+          <SubMenu icon={<Tetragonal />} title="Tetragonal">
             <MenuItem>4/mmm</MenuItem>
             <MenuItem>
               <span style={{ textDecoration: "overline" }}>4</span>2m
@@ -65,7 +72,7 @@ function Sidebar() {
             </MenuItem>
             <MenuItem>4</MenuItem>
           </SubMenu>
-          <SubMenu title="Cubic">
+          <SubMenu icon={<Cubic />} title="Cubic">
             <MenuItem>
               m<span style={{ textDecoration: "overline" }}>3</span>m
             </MenuItem>
