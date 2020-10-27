@@ -28,12 +28,15 @@ const planeRotations = {
   three: [0, Math.PI / 3, 0],
 };
 
+const pColor = "#BDEFEA";
+const rotColor = "#02223C";
+
 const axisProps = {
   odd: {
     a1: {
       rotationSym: 2,
       axisRotation: axisRotations.a1,
-      rotationColor: "black",
+      rotationColor: rotColor,
       planeColor: "black",
       axisColor: "gray",
       planes: [planeRotations.four],
@@ -41,7 +44,7 @@ const axisProps = {
     a2: {
       rotationSym: 2,
       axisRotation: axisRotations.a2,
-      rotationColor: "blue",
+      rotationColor: rotColor,
       planeColor: "blue",
       axisColor: "gray",
       planes: [planeRotations.four],
@@ -49,7 +52,7 @@ const axisProps = {
     a3: {
       rotationSym: 2,
       axisRotation: axisRotations.a3,
-      rotationColor: "green",
+      rotationColor: rotColor,
       planeColor: "green",
       axisColor: "gray",
       planes: [planeRotations.four],
@@ -57,7 +60,7 @@ const axisProps = {
     z: {
       rotationSym: 6,
       axisRotation: axisRotations.z,
-      rotationColor: "purple",
+      rotationColor: rotColor,
       planeColor: "purple",
       axisColor: "gray",
       planes: [planeRotations.four],
@@ -67,8 +70,8 @@ const axisProps = {
     x: {
       rotationSym: 4,
       axisRotation: axisRotations.x,
-      rotationColor: "black",
-      planeColor: "silver",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [
         planeRotations.four,
@@ -80,8 +83,8 @@ const axisProps = {
     y: {
       rotationSym: 4,
       axisRotation: axisRotations.y,
-      rotationColor: "black",
-      planeColor: "silver",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [
         planeRotations.two,
@@ -94,8 +97,8 @@ const axisProps = {
     z: {
       rotationSym: 4,
       axisRotation: axisRotations.z,
-      rotationColor: "black",
-      planeColor: "silver",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [
         // planeRotations.four,
@@ -107,8 +110,8 @@ const axisProps = {
     nnn_ppp: {
       rotationSym: 3,
       axisRotation: axisRotations.nnn_ppp,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.three],
       hasPlane: false,
@@ -116,8 +119,8 @@ const axisProps = {
     nnp_ppn: {
       rotationSym: 3,
       axisRotation: axisRotations.nnp_ppn,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.three],
       hasPlane: false,
@@ -125,8 +128,8 @@ const axisProps = {
     npn_pnp: {
       rotationSym: 3,
       axisRotation: axisRotations.npn_pnp,
-      rotationColor: "black",
-      planeColor: "grey",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.three],
       hasPlane: false,
@@ -134,8 +137,8 @@ const axisProps = {
     npp_pnn: {
       rotationSym: 3,
       axisRotation: axisRotations.npp_pnn,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.three],
       hasPlane: false,
@@ -143,8 +146,8 @@ const axisProps = {
     xy: {
       rotationSym: 2,
       axisRotation: axisRotations.xy,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,
@@ -152,8 +155,8 @@ const axisProps = {
     nxy: {
       rotationSym: 2,
       axisRotation: axisRotations.nxy,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,
@@ -161,8 +164,8 @@ const axisProps = {
     xz: {
       rotationSym: 2,
       axisRotation: axisRotations.xz,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,
@@ -170,8 +173,8 @@ const axisProps = {
     nxz: {
       rotationSym: 2,
       axisRotation: axisRotations.nxz,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,
@@ -179,8 +182,8 @@ const axisProps = {
     yz: {
       rotationSym: 2,
       axisRotation: axisRotations.yz,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,
@@ -188,8 +191,8 @@ const axisProps = {
     nyz: {
       rotationSym: 2,
       axisRotation: axisRotations.nyz,
-      rotationColor: "black",
-      planeColor: "gray",
+      rotationColor: rotColor,
+      planeColor: pColor,
       axisColor: "gray",
       planes: [planeRotations.two],
       hasPlane: false,

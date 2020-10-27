@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "./components/Sidebar";
 import PointGroup from "./components/build/Axes";
 import Display from "./components/Display";
+import Layout from "./components/Layout";
 // import Container from "react-bootstrap/Container";
 import "./App.css";
 // import { Col, Row } from "react-bootstrap";
@@ -31,9 +32,11 @@ function App() {
   return (
     <div className="App">
       <Sidebar />
-      <Display>
-        <PointGroup />
-      </Display>
+      <Layout>
+        <Display>
+          <PointGroup />
+        </Display>
+      </Layout>
     </div>
   );
 }

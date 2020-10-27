@@ -1,0 +1,36 @@
+:root {
+  --header-height: 125px;
+}
+
+.right {
+  height: 100vh;
+  /* background-color: red; */
+}
+
+.header {
+  /* position: relative; */
+  width: 100vw;
+  height: var(--header-height);
+  background-color: rgb(46, 196, 182, 1);
+}
+
+.symbol {
+  height: var(--header-height);
+  line-height: var(--header-height);
+  text-align: center;
+  font-size: 3rem;
+  /* background-color: red; */
+}
+.order {
+  height: calc(0.25 * var(--header-height));
+  /* line-height: calc(0.25 * var(--header-height)); */
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: calc(-0.12 * var(--header-height));
+}
+
+.group {
+  width: 100vw;
+  height: calc(100vh - var(--header-height));
+  background-color: rgba(243, 255, 252, 1);
+}

@@ -37,7 +37,7 @@ const arrayPositions = generatePointGroup(generators, generalPoint, false);
 
 let atoms = [];
 arrayPositions.forEach((p) => {
-  atoms.push(<Atom color="red" position={p} />);
+  atoms.push(<Atom color="#FF1F35" position={p} />);
 });
 
 const AxisLine = ({ props }) => {
