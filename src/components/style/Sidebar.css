@@ -20,4 +20,19 @@
   /* width: 270px; */
   float: left;
   /* background-color: rgb(20, 20, 20); */
+  margin-left: 0;
+}
+
+.expand-button {
+  position: absolute;
+  left: 210px;
+  z-index: 200;
+  background-color: rgba(35, 35, 35, 1); /* Green */
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

@@ -77,7 +77,6 @@ const AxisLine = ({ props }) => {
       </>
     );
   } else if (props.rotationSym === 4) {
-    console.log("Four fold");
     rotationElement = (
       <>
         <FourFold
@@ -125,19 +124,11 @@ const AxisLine = ({ props }) => {
     mirrorPlanes = <></>;
   }
   const q = new THREE.Quaternion(0.146, 0.354, 0.354, 0.854);
-  const axis = useRef(null);
-  useFrame(() => console.log(axis));
-
   return (
     <group>
       {rotationElement}
       {mirrorPlanes}
-      <mesh
-        ref={axis}
-        castShadow
-        position={[0, 0, 0]}
-        rotation={props.axisRotation}
-      >
+      <mesh castShadow position={[0, 0, 0]} rotation={props.axisRotation}>
         <cylinderBufferGeometry attach="geometry" args={basicArgs} />
         <meshStandardMaterial
           attach="material"
