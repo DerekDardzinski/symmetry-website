@@ -1,9 +1,10 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
-import PointGroup from "./components/build/Axes";
-import Display from "./components/Display";
-import Layout from "./components/Layout";
+// import Sidebar from "./components/Sidebar";
+// import PointGroup from "./components/build/Axes";
+// import Display from "./components/Display";
+// import Layout from "./components/Layout";
 // import Container from "react-bootstrap/Container";
+import Home from "./Home";
 import "./App.css";
 // import { Col, Row } from "react-bootstrap";
 
@@ -31,12 +32,15 @@ function App() {
   // };
   return (
     <div className="App">
+      <Home />
+      {/*
       <Sidebar />
       <Layout>
         <Display>
           <PointGroup />
         </Display>
       </Layout>
+*/}
     </div>
   );
 }
