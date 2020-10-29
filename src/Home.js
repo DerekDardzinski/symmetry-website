@@ -44,15 +44,22 @@ const cardProps = {
 
 function Home() {
   return (
-    <div className="home-grid">
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
-      <Card props={cardProps.a} />
+    <div className="home-main">
+      {/*
+      <div className="home-header">
+        <p className="home-title">Experience Point Groups in 3D</p>
+      </div>
+      */}
+      <div className="home-grid">
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+        <Card props={cardProps.a} />
+      </div>
     </div>
   );
 }

@@ -1,14 +1,22 @@
 import React, { useState } from "react";
+import Display from "./components/Display";
+import PointGroup from "./components/build/Axes";
+
+// <img
+// className="home-card-image"
+// src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80"
+// alt="img"
+// style={{ width: "100%" }}
+// />;
 
 function Card({ props }) {
   return (
     <div className="home-card">
-      <img
-        className="home-card-image"
-        src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80"
-        alt="img"
-        style={{ width: "100%" }}
-      />
+      <div className="home-card-group">
+        <Display orbit={false}>
+          <PointGroup />
+        </Display>
+      </div>
       <div className="home-card-container">
         <h4>
           <b>{props.title}</b>
@@ -16,9 +24,9 @@ function Card({ props }) {
       </div>
       <div className="home-card-info">
         <div>
-          <b>Number of Groups: </b>7
+          <b>Group Shown: m3m</b>
         </div>
-        <div>explore</div>
+        <button className="home-card-button">explore</button>
       </div>
     </div>
   );

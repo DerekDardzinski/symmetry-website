@@ -3,8 +3,14 @@ import { Canvas } from "react-three-fiber";
 import { OrbitControls, softShadows } from "drei";
 import "./style/Display.css";
 
-function Display(props) {
+function Display(props, { orbit }) {
   softShadows();
+  let orbitControls;
+  if (orbit) {
+    orbitControls = <OrbitControls />;
+  } else {
+    orbitControls = <></>;
+  }
   return (
     <div className="Display">
       <Canvas
@@ -43,8 +49,7 @@ function Display(props) {
             </mesh>
           </group>
           {props.children}
-
-          <OrbitControls />
+          {orbitControls}
         </group>
       </Canvas>
     </div>
