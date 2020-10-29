@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import backgroundImage from "./images/SidebarBackground2.svg";
 import Card from "./Card";
+import PointGroup from "./components/build/Axes";
+import Text from "./components/build/Question";
 // <div className="home-main">
 // <div className="home-left">
 // <div className="home-grid">
@@ -51,14 +53,30 @@ function Home() {
       </div>
       */}
       <div className="home-grid">
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
-        <Card props={cardProps.a} />
+        <Card title="About">
+          <Text />
+        </Card>
+        <Card title="Triclinic">
+          <PointGroup />
+        </Card>
+        <Card title="Monoclinic">
+          <PointGroup />
+        </Card>
+        <Card title="Rhombohedral">
+          <PointGroup />
+        </Card>
+        <Card title="Hexagonal">
+          <PointGroup />
+        </Card>
+        <Card title="Orthorhombic">
+          <PointGroup />
+        </Card>
+        <Card title="Tetragonal">
+          <PointGroup />
+        </Card>
+        <Card title="Cubic">
+          <PointGroup />
+        </Card>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ function Display(props, { orbit }) {
         <pointLight position={[0, 0, -20]} intensity={0.5} />
         <pointLight position={[-10, 0, -20]} intensity={0.5} />
         <pointLight position={[0, -10, 0]} intensity={1.5} />
+        <pointLight position={[10, -10, 0]} intensity={1.5} />
         <pointLight position={[-10, -10, 0]} intensity={1.5} />
         <pointLight position={[10, 10, 0]} intensity={1.5} />
         <directionalLight

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Display from "./components/Display";
 import PointGroup from "./components/build/Axes";
+import Text from "./components/build/Question";
 
 // <img
 // className="home-card-image"
@@ -9,13 +10,11 @@ import PointGroup from "./components/build/Axes";
 // style={{ width: "100%" }}
 // />;
 
-function Card({ props }) {
+function Card(props) {
   return (
     <div className="home-card">
       <div className="home-card-group">
-        <Display orbit={false}>
-          <PointGroup />
-        </Display>
+        <Display orbit={false}>{props.children}</Display>
       </div>
       <div className="home-card-container">
         <h4>
