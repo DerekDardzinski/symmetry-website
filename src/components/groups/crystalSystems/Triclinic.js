@@ -1,8 +1,8 @@
-import generatorMatrices from "../Generators";
+import generatorMatrices from "../../build/Generators";
 
 const triclincGroups = {
-  _p1: [generatorMatrices.a],
-  _p1bar: [generatorMatrices.h],
+  _1: [generatorMatrices.a],
+  _1bar: [generatorMatrices.h],
 };
 
 export default triclincGroups;

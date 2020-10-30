@@ -3,10 +3,10 @@ import { Canvas } from "react-three-fiber";
 import { OrbitControls, softShadows } from "drei";
 import "./style/Display.css";
 
-function Display(props, { orbit }) {
+function Display(props) {
   softShadows();
   let orbitControls;
-  if (orbit) {
+  if (props.orbit) {
     orbitControls = <OrbitControls />;
   } else {
     orbitControls = <></>;

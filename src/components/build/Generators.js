@@ -13,8 +13,8 @@ const generatorMatrices = {
   ]),
   c: matrix([
     [-1, 0, 0],
-    [0, 1, 0],
-    [0, 0, -1],
+    [0, -1, 0],
+    [0, 0, 1],
   ]),
   d: matrix([
     [0, 0, 1],
@@ -76,11 +76,6 @@ const generatorMatrices = {
     [1, -1, 0],
     [0, 0, 1],
   ]),
-  // n: matrix([
-  // [ -Math.sqrt(3) / 2, 0],
-  // [Math.sqrt(3) / 2, -1 / 2, 0],
-  // [0, 0, 1],
-  // ]),
 };
 
 export default generatorMatrices;

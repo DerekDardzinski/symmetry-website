@@ -24,9 +24,7 @@ const MirrorPlane = ({ axisRotation, color, planeRotation }) => {
           color={color}
           opacity={0.6}
           transparent="true"
-          // side={THREE.DoubleSide}
           depthWrite={true}
-          // blending={THREE.NormalBlending}
         />
       </mesh>
     </group>

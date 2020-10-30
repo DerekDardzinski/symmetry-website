@@ -25,11 +25,16 @@ const planeRotations = {
   four: [0, Math.PI / 2, 0],
   fourdu: [0, Math.PI / 4, 0],
   fourdd: [0, -Math.PI / 4, 0],
-  three: [0, Math.PI / 3, 0],
+  three0: [0, 0, 0],
+  three1: [0, Math.PI / 3, 0],
+  three2: [0, (2 * Math.PI) / 3, 0],
 };
 
 const pColor = "#BDEFEA";
 const rotColor = "#02223C";
+const axColor = "gray";
+
+export { axisRotations, planeRotations, pColor, rotColor, axColor };
 
 const axisProps = {
   odd: {

@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import backgroundImage from "./images/SidebarBackground2.svg";
 import Card from "./Card";
-import PointGroup from "./components/build/Axes";
+import { Triclinic1, Triclinic1bar } from "./components/groups/Triclinic";
+import {
+  Monoclinic2,
+  Monoclinic2om,
+  Monoclinicm,
+} from "./components/groups/Monoclinic";
+import {
+  Rhombohedral3barm,
+  Rhombohedral3m,
+} from "./components/groups/Rhombohedral";
 import Text from "./components/build/Question";
 // <div className="home-main">
 // <div className="home-left">
@@ -57,25 +66,25 @@ function Home() {
           <Text />
         </Card>
         <Card title="Triclinic">
-          <PointGroup />
+          <Triclinic1 />
         </Card>
         <Card title="Monoclinic">
-          <PointGroup />
+          <Monoclinic2om />
         </Card>
         <Card title="Rhombohedral">
-          <PointGroup />
+          <Rhombohedral3barm />
         </Card>
         <Card title="Hexagonal">
-          <PointGroup />
+          <Rhombohedral3m />
         </Card>
         <Card title="Orthorhombic">
-          <PointGroup />
+          <Triclinic1 />
         </Card>
         <Card title="Tetragonal">
-          <PointGroup />
+          <Triclinic1 />
         </Card>
         <Card title="Cubic">
-          <PointGroup />
+          <Triclinic1 />
         </Card>
       </div>
     </div>

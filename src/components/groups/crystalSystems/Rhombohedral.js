@@ -1,4 +1,4 @@
-import generatorMatrices from "../Generators";
+import generatorMatrices from "../../build/Generators";
 
 const rhombohedralGroups = {
   _3barm: [generatorMatrices.f, generatorMatrices.h, generatorMatrices.n],

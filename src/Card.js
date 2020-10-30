@@ -14,7 +14,7 @@ function Card(props) {
   return (
     <div className="home-card">
       <div className="home-card-group">
-        <Display orbit={false}>{props.children}</Display>
+        <Display orbit={true}>{props.children}</Display>
       </div>
       <div className="home-card-container">
         <h4>

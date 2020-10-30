@@ -1,4 +1,4 @@
-import generatorMatrices from "../Generators";
+import generatorMatrices from "../../build/Generators";
 
 const monoclinicGroups = {
   _2om: [generatorMatrices.c, generatorMatrices.h],
