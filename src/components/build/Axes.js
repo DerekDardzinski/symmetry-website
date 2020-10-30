@@ -114,6 +114,7 @@ const AxisLine = ({ props }) => {
           axisRotation={props.axisRotation}
           planeRotation={r}
           color={props.planeColor}
+          hexagon={props.hexagon}
         />
       );
     });

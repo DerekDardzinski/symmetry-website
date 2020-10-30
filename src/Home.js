@@ -10,48 +10,34 @@ import {
 import {
   Rhombohedral3barm,
   Rhombohedral3m,
+  Rhombohedral32,
+  Rhombohedral3bar,
+  Rhombohedral3,
 } from "./components/groups/Rhombohedral";
+import {
+  Hexagonal60mmm,
+  Hexagonal6barm2,
+  Hexagonal6mm,
+  Hexagonal6om,
+  Hexagonal622,
+  Hexagonal6bar,
+  Hexagonal6,
+} from "./components/groups/Hexagonal";
+import {
+  Orthorhombicmmm,
+  Orthorhombicmm2,
+  Orthorhombic222,
+} from "./components/groups/Orthorhombic";
+import {
+  Tetragonal4ommm,
+  Tetragonal4bar2m,
+  Tetragonal4mm,
+  Tetragonal422,
+  Tetragonal4om,
+  Tetragonal4bar,
+  Tetragonal4,
+} from "./components/groups/Tetragonal";
 import Text from "./components/build/Question";
-// <div className="home-main">
-// <div className="home-left">
-// <div className="home-grid">
-// </div>
-// </div>
-// <div className="home-right">test</div>
-// </div>
-//
-// <div className="home-nav" id="home-a">
-// Home
-// </div>
-// <div className="home-nav" id="home-a">
-// Triclinic
-// </div>
-// <div className="home-nav" id="home-m">
-// Monoclinic
-// </div>
-// <div className="home-nav" id="home-r">
-// Rhombohedral
-// </div>
-// <div className="home-nav" id="home-h">
-// Hexagonal
-// </div>
-// <div className="home-nav" id="home-o">
-// Orthorhombic
-// </div>
-// <div className="home-nav" id="home-t">
-// Tetragonal
-// </div>
-// <div className="home-nav" id="home-c">
-// Cubic
-// </div>
-
-const cardProps = {
-  a: {
-    src:
-      "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80",
-    title: "About",
-  },
-};
 
 function Home() {
   return (
@@ -66,25 +52,25 @@ function Home() {
           <Text />
         </Card>
         <Card title="Triclinic">
-          <Triclinic1 />
+          <Tetragonal4 />
         </Card>
         <Card title="Monoclinic">
-          <Monoclinic2om />
+          <Tetragonal4bar />
         </Card>
         <Card title="Rhombohedral">
-          <Rhombohedral3barm />
+          <Tetragonal4om />
         </Card>
         <Card title="Hexagonal">
-          <Rhombohedral3m />
+          <Tetragonal422 />
         </Card>
         <Card title="Orthorhombic">
-          <Triclinic1 />
+          <Tetragonal4mm />
         </Card>
         <Card title="Tetragonal">
-          <Triclinic1 />
+          <Tetragonal4bar2m />
         </Card>
         <Card title="Cubic">
-          <Triclinic1 />
+          <Tetragonal4ommm />
         </Card>
       </div>
     </div>

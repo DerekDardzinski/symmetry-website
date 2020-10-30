@@ -1,5 +1,4 @@
-import generatorMatrices from "../Generators";
-import { matrix, multiply } from "mathjs";
+import generatorMatrices from "../../build/Generators";
 
 const hexagonalGroups = {
   _6ommm: [
