@@ -4,7 +4,7 @@ import React from "react";
 // import Display from "./components/Display";
 // import Layout from "./components/Layout";
 // import Container from "react-bootstrap/Container";
-import Home from "./Home";
+import Home from "./pages/Home";
 import "./App.css";
 // import { Col, Row } from "react-bootstrap";
 

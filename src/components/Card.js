@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import Display from "./components/Display";
-import PointGroup from "./components/build/Axes";
-import Text from "./components/build/Question";
+import React from "react";
+import Display from "./Display";
 
 // <img
 // className="home-card-image"

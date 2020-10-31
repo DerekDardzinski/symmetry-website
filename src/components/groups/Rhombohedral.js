@@ -5,6 +5,7 @@ import generatePointGroup from "../build/Generate";
 import { matrix } from "mathjs";
 import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
+import { atomColor } from "../build/AxesProps";
 
 function Rhombohedral3barm() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
@@ -15,7 +16,7 @@ function Rhombohedral3barm() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3barm).forEach(([key, value]) => {
@@ -39,7 +40,7 @@ function Rhombohedral3m() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3m).forEach(([key, value]) => {
@@ -63,7 +64,7 @@ function Rhombohedral32() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(rhombohedralAxis._32).forEach(([key, value]) => {
@@ -87,7 +88,7 @@ function Rhombohedral3bar() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3bar).forEach(([key, value]) => {
@@ -111,7 +112,7 @@ function Rhombohedral3() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3).forEach(([key, value]) => {

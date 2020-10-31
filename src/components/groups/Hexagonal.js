@@ -5,6 +5,7 @@ import generatePointGroup from "../build/Generate";
 import { matrix } from "mathjs";
 import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
+import { atomColor } from "../build/AxesProps";
 
 function Hexagonal60mmm() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
@@ -15,7 +16,7 @@ function Hexagonal60mmm() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6ommm).forEach(([key, value]) => {
@@ -39,7 +40,7 @@ function Hexagonal6barm2() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6barm2).forEach(([key, value]) => {
@@ -59,7 +60,7 @@ function Hexagonal6mm() {
   const positions = generatePointGroup(hexagonalGroup._6mm, generalPoint, true);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6mm).forEach(([key, value]) => {
@@ -79,7 +80,7 @@ function Hexagonal622() {
   const positions = generatePointGroup(hexagonalGroup._622, generalPoint, true);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._622).forEach(([key, value]) => {
@@ -99,7 +100,7 @@ function Hexagonal6om() {
   const positions = generatePointGroup(hexagonalGroup._6om, generalPoint, true);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6om).forEach(([key, value]) => {
@@ -123,7 +124,7 @@ function Hexagonal6bar() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6bar).forEach(([key, value]) => {
@@ -143,7 +144,7 @@ function Hexagonal6() {
   const positions = generatePointGroup(hexagonalGroup._6, generalPoint, true);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(hexagonalAxis._6).forEach(([key, value]) => {

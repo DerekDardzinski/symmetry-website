@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import backgroundImage from "./images/SidebarBackground2.svg";
-import Card from "./Card";
-import { Triclinic1, Triclinic1bar } from "./components/groups/Triclinic";
+// import backgroundImage from "./images/SidebarBackground2.svg";
+import Card from "../components/Card";
+import { Triclinic1, Triclinic1bar } from "../components/groups/Triclinic";
 import {
   Monoclinic2,
   Monoclinic2om,
   Monoclinicm,
-} from "./components/groups/Monoclinic";
+} from "../components/groups/Monoclinic";
 import {
   Rhombohedral3barm,
   Rhombohedral3m,
   Rhombohedral32,
   Rhombohedral3bar,
   Rhombohedral3,
-} from "./components/groups/Rhombohedral";
+} from "../components/groups/Rhombohedral";
 import {
   Hexagonal60mmm,
   Hexagonal6barm2,
@@ -22,12 +22,12 @@ import {
   Hexagonal622,
   Hexagonal6bar,
   Hexagonal6,
-} from "./components/groups/Hexagonal";
+} from "../components/groups/Hexagonal";
 import {
   Orthorhombicmmm,
   Orthorhombicmm2,
   Orthorhombic222,
-} from "./components/groups/Orthorhombic";
+} from "../components/groups/Orthorhombic";
 import {
   Tetragonal4ommm,
   Tetragonal4bar2m,
@@ -36,15 +36,15 @@ import {
   Tetragonal4om,
   Tetragonal4bar,
   Tetragonal4,
-} from "./components/groups/Tetragonal";
+} from "../components/groups/Tetragonal";
 import {
   Cubicm3barm,
   Cubic4bar3m,
   Cubic432,
   Cubicm3bar,
   Cubic23,
-} from "./components/groups/Cubic";
-import Text from "./components/build/Question";
+} from "../components/groups/Cubic";
+import Text from "../components/build/Question";
 
 function Home() {
   return (
@@ -59,25 +59,25 @@ function Home() {
           <Text />
         </Card>
         <Card title="Triclinic">
-          <Cubic23 />
+          <Triclinic1 />
         </Card>
         <Card title="Monoclinic">
-          <Cubicm3bar />
+          <Monoclinic2 />
         </Card>
         <Card title="Rhombohedral">
-          <Cubic432 />
+          <Rhombohedral3 />
         </Card>
         <Card title="Hexagonal">
-          <Cubic4bar3m />
+          <Hexagonal6 />
         </Card>
         <Card title="Orthorhombic">
-          <Cubicm3barm />
+          <Orthorhombicmmm />
         </Card>
         <Card title="Tetragonal">
-          <Tetragonal4bar2m />
+          <Tetragonal4 />
         </Card>
         <Card title="Cubic">
-          <Tetragonal4ommm />
+          <Cubicm3bar />
         </Card>
       </div>
     </div>

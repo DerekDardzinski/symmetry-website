@@ -5,13 +5,14 @@ import generatePointGroup from "../build/Generate";
 import { matrix } from "mathjs";
 import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
+import { atomColor } from "../build/AxesProps";
 
 function Monoclinic2() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
   const positions = generatePointGroup(monoclinicGroup._2, generalPoint, false);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(monoclinicAxis._2).forEach(([key, value]) => {
@@ -35,7 +36,7 @@ function Monoclinic2om() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(monoclinicAxis._2om).forEach(([key, value]) => {
@@ -55,7 +56,7 @@ function Monoclinicm() {
   const positions = generatePointGroup(monoclinicGroup._m, generalPoint, false);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(monoclinicAxis._m).forEach(([key, value]) => {

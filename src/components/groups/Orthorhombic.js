@@ -5,6 +5,7 @@ import generatePointGroup from "../build/Generate";
 import { matrix } from "mathjs";
 import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
+import { atomColor } from "../build/AxesProps";
 
 function Orthorhombicmmm() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
@@ -15,7 +16,7 @@ function Orthorhombicmmm() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(orthorhombicAxis._mmm).forEach(([key, value]) => {
@@ -39,7 +40,7 @@ function Orthorhombicmm2() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(orthorhombicAxis._mm2).forEach(([key, value]) => {
@@ -63,7 +64,7 @@ function Orthorhombic222() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(orthorhombicAxis._222).forEach(([key, value]) => {

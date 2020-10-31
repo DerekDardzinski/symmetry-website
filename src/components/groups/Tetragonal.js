@@ -5,6 +5,7 @@ import generatePointGroup from "../build/Generate";
 import { matrix } from "mathjs";
 import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
+import { atomColor } from "../build/AxesProps";
 
 function Tetragonal4ommm() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
@@ -15,7 +16,7 @@ function Tetragonal4ommm() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4ommm).forEach(([key, value]) => {
@@ -39,7 +40,7 @@ function Tetragonal4bar2m() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4bar2m).forEach(([key, value]) => {
@@ -63,7 +64,7 @@ function Tetragonal4mm() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4mm).forEach(([key, value]) => {
@@ -87,7 +88,7 @@ function Tetragonal422() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._422).forEach(([key, value]) => {
@@ -111,7 +112,7 @@ function Tetragonal4om() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4om).forEach(([key, value]) => {
@@ -135,7 +136,7 @@ function Tetragonal4bar() {
   );
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4bar).forEach(([key, value]) => {
@@ -155,7 +156,7 @@ function Tetragonal4() {
   const positions = generatePointGroup(tetragonalGroup._4, generalPoint, false);
   let atoms = [];
   positions.forEach((p) => {
-    atoms.push(<Atom color="#FF1F35" position={p} />);
+    atoms.push(<Atom color={atomColor} position={p} />);
   });
   let axes = [];
   Object.entries(tetragonalAxis._4).forEach(([key, value]) => {

@@ -69,7 +69,7 @@ const AxisLine = ({ props }) => {
           rotation={props.axisRotation}
           color={props.rotationColor}
           height={-basicArgsObj.height / 2.2}
-          shapeRotation={[Math.PI / 2, 0, -Math.PI / 6]}
+          shapeRotation={[Math.PI / 2, 0, Math.PI / 6]}
         />
       </>
     );
