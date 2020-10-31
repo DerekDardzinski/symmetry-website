@@ -1,4 +1,4 @@
-import generatorMatrices from "../Generators";
+import generatorMatrices from "../../build/Generators";
 
 const cubicGroup = {
   _m3barm: [
@@ -11,11 +11,16 @@ const cubicGroup = {
   _432: [
     generatorMatrices.d,
     generatorMatrices.k2,
-    generatorMatrices.c,
+    generatorMatrices.cy,
     generatorMatrices.b,
   ],
-  _m3bar: [generatorMatrices.c, generatorMatrices.d, generatorMatrices.h],
-  _23: [generatorMatrices.b, generatorMatrices.c, generatorMatrices.d],
+  _m3bar: [
+    generatorMatrices.c,
+    generatorMatrices.cy,
+    generatorMatrices.d,
+    generatorMatrices.h,
+  ],
+  _23: [generatorMatrices.b, generatorMatrices.cy, generatorMatrices.d],
 };
 
 export default cubicGroup;

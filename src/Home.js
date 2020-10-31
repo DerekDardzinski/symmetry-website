@@ -37,6 +37,13 @@ import {
   Tetragonal4bar,
   Tetragonal4,
 } from "./components/groups/Tetragonal";
+import {
+  Cubicm3barm,
+  Cubic4bar3m,
+  Cubic432,
+  Cubicm3bar,
+  Cubic23,
+} from "./components/groups/Cubic";
 import Text from "./components/build/Question";
 
 function Home() {
@@ -52,19 +59,19 @@ function Home() {
           <Text />
         </Card>
         <Card title="Triclinic">
-          <Tetragonal4 />
+          <Cubic23 />
         </Card>
         <Card title="Monoclinic">
-          <Tetragonal4bar />
+          <Cubicm3bar />
         </Card>
         <Card title="Rhombohedral">
-          <Tetragonal4om />
+          <Cubic432 />
         </Card>
         <Card title="Hexagonal">
-          <Tetragonal422 />
+          <Cubic4bar3m />
         </Card>
         <Card title="Orthorhombic">
-          <Tetragonal4mm />
+          <Cubicm3barm />
         </Card>
         <Card title="Tetragonal">
           <Tetragonal4bar2m />
