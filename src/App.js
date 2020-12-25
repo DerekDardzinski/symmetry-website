@@ -1,46 +1,34 @@
 import React from "react";
-// import Sidebar from "./components/Sidebar";
-// import PointGroup from "./components/build/Axes";
-// import Display from "./components/Display";
-// import Layout from "./components/Layout";
-// import Container from "react-bootstrap/Container";
 import Home from "./pages/Home";
+import TriclinicPage from "./pages/TriclinicPage";
+import MonoclinicPage from "./pages/MonoclinicPage";
+import RhombohedralPage from "./pages/RhombohedralPage";
+import HexagonalPage from "./pages/HexagonalPage";
+import OrthorhombicPage from "./pages/OrthorhombicPage";
+import TetragonalPage from "./pages/TetragonalPage";
+import CubicPage from "./pages/CubicPage";
 import "./App.css";
-// import { Col, Row } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  Redirect,
+} from "react-router-dom";
 
 function App() {
-  // const styles = {
-  // container: {
-  // paddingLeft: 0,
-  // paddingRight: 0,
-  // },
-  // row: {
-  // marginLeft: 0,
-  // marginRight: 0,
-  // },
-  // col: {
-  // paddingLeft: 0,
-  // paddingRight: 0,
-  // backgroundColor: "rgba(230,0,230,1)",
-  // width: "200px",
-  // },
-  // col2: {
-  // paddingLeft: 0,
-  // paddingRight: 0,
-  // backgroundColor: "rgba(230,230,230,1)",
-  // },
-  // };
   return (
     <div className="App">
-      <Home />
-      {/*
-      <Sidebar />
-      <Layout>
-        <Display>
-          <PointGroup />
-        </Display>
-      </Layout>
-*/}
+      <Router>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/triclinic" component={TriclinicPage} />
+        <Route exact path="/monoclinic" component={MonoclinicPage} />
+        <Route exact path="/rhombohedral" component={RhombohedralPage} />
+        <Route exact path="/hexagonal" component={HexagonalPage} />
+        <Route exact path="/orthorhombic" component={OrthorhombicPage} />
+        <Route exact path="/tetragonal" component={TetragonalPage} />
+        <Route exact path="/cubic" component={CubicPage} />
+      </Router>
     </div>
   );
 }

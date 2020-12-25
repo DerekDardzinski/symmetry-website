@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import backgroundImage from "./images/SidebarBackground2.svg";
 import Card from "../components/Card";
 import { Triclinic1, Triclinic1bar } from "../components/groups/Triclinic";
 import {
@@ -47,6 +46,11 @@ import {
 import Text from "../components/build/Question";
 
 function Home() {
+  const a = (
+    <>
+      3<span>test</span>3
+    </>
+  );
   return (
     <div className="home-main">
       {/*
@@ -55,28 +59,74 @@ function Home() {
       </div>
       */}
       <div className="home-grid">
-        <Card title="About">
+        <Card title="About" button_text="explore" route="/about">
           <Text />
         </Card>
-        <Card title="Triclinic">
+        <Card
+          title="Triclinic"
+          button_text="explore"
+          route="/triclinic"
+          left_side="Group Shown: "
+          group_name="1"
+        >
           <Triclinic1 />
         </Card>
-        <Card title="Monoclinic">
+        <Card
+          title="Monoclinic"
+          button_text="explore"
+          route="/monoclinic"
+          left_side="Group Shown: "
+          group_name="2"
+        >
           <Monoclinic2 />
         </Card>
-        <Card title="Rhombohedral">
+        <Card
+          title="Rhombohedral"
+          button_text="explore"
+          route="/rhombohedral"
+          left_side="Group Shown: "
+          group_name="3"
+        >
           <Rhombohedral3 />
         </Card>
-        <Card title="Hexagonal">
+        <Card
+          title="Hexagonal"
+          button_text="explore"
+          route="/hexagonal"
+          left_side="Group Shown: "
+          group_name="6"
+        >
           <Hexagonal6 />
         </Card>
-        <Card title="Orthorhombic">
+        <Card
+          title="Orthorhombic"
+          button_text="explore"
+          route="/orthorhombic"
+          left_side="Group Shown: "
+          group_name="mmm"
+        >
           <Orthorhombicmmm />
         </Card>
-        <Card title="Tetragonal">
+        <Card
+          title="Tetragonal"
+          button_text="explore"
+          route="/tetragonal"
+          left_side="Group Shown: "
+          group_name="4"
+        >
           <Tetragonal4 />
         </Card>
-        <Card title="Cubic">
+        <Card
+          title="Cubic"
+          button_text="explore"
+          route="/cubic"
+          left_side="Group Shown: "
+          group_name={
+            <>
+              m<span style={{ textDecoration: "overline" }}>3</span>
+            </>
+          }
+        >
           <Cubicm3bar />
         </Card>
       </div>

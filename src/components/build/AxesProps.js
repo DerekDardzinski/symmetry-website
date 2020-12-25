@@ -30,9 +30,12 @@ const planeRotations = {
   three2: [0, (2 * Math.PI) / 3, 0],
 };
 
-const pColor = "#BDEFEA";
-const atomColor = "blue";
-const rotColor = "#02223C";
+// const pColor = "#BDEFEA";
+// const pColor = "#6da37c";
+const pColor = "#92b39b";
+const atomColor = "black";
+// const rotColor = "#02223C";
+const rotColor = "black";
 const axColor = "gray";
 
 export { axisRotations, planeRotations, pColor, atomColor, rotColor, axColor };

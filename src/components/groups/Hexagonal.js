@@ -7,7 +7,7 @@ import AxisLine from "../build/Axes";
 import Atom from "../build/Atom";
 import { atomColor } from "../build/AxesProps";
 
-function Hexagonal60mmm() {
+function Hexagonal6ommm() {
   const generalPoint = matrix([[1.5], [0.3], [0.9]]);
   const positions = generatePointGroup(
     hexagonalGroup._6ommm,
@@ -160,7 +160,7 @@ function Hexagonal6() {
 }
 
 export {
-  Hexagonal60mmm,
+  Hexagonal6ommm,
   Hexagonal6barm2,
   Hexagonal6mm,
   Hexagonal6om,

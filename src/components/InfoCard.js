@@ -32,7 +32,7 @@ const StyledButton = withStyles({
   },
 })(Button);
 
-function Card(props) {
+function InfoCard(props) {
   return (
     <div className="home-card">
       <div className="home-card-group">
@@ -44,25 +44,14 @@ function Card(props) {
         </h4>
       </div>
       <div className="home-card-info">
-        <div>
-          <b>
-            {props.left_side}
-            {props.group_name}
-          </b>
-        </div>
-        <StyledButton
-          // className="home-card-button"
-          component={Link}
-          to={props.route}
+        <div
+          style={{ display: "flex", justifyContent: "center", width: "100%" }}
         >
-          <b>{props.button_text}</b>
-        </StyledButton>
-        {/*
-        <button className="home-card-button">{props.button_text}</button>
-          */}
+          <b>{props.left_side}</b>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Card;
+export default InfoCard;

@@ -165,7 +165,7 @@ const rhombohedralAxes = {
   },
   _3: {
     a1: {
-      rotationSym: 2,
+      rotationSym: 1,
       axisRotation: axisRotations.a1,
       rotationColor: rotColor,
       planeColor: pColor,
@@ -174,7 +174,7 @@ const rhombohedralAxes = {
       hasPlane: false,
     },
     a2: {
-      rotationSym: 2,
+      rotationSym: 1,
       axisRotation: axisRotations.a2,
       rotationColor: rotColor,
       planeColor: pColor,
