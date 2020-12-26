@@ -11,7 +11,7 @@ import TetragonalPage from "./pages/TetragonalPage";
 import CubicPage from "./pages/CubicPage";
 import "./App.css";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Link,
@@ -64,7 +64,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={AboutPage} />
         <Route exact path="/triclinic" component={TriclinicPage} />
