@@ -55,9 +55,6 @@ function Home() {
   return (
     <div className="home-main">
       <div className="home-grid">
-        <Card title="About" button_text="explore" route="/about">
-          <Text />
-        </Card>
         <Card
           title="Triclinic"
           button_text="explore"
@@ -124,6 +121,9 @@ function Home() {
           }
         >
           <Cubicm3bar />
+        </Card>
+        <Card title="About" button_text="explore" route="/about">
+          <Text />
         </Card>
       </div>
     </div>
