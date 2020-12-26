@@ -8,32 +8,32 @@ import {
 
 const rhombohedralAxes = {
   _3barm: {
-    a1: {
+    a12: {
       rotationSym: 2,
-      axisRotation: axisRotations.a1,
+      axisRotation: axisRotations.a12,
       rotationColor: rotColor,
       planeColor: pColor,
       axisColor: axColor,
       planes: [planeRotations.four],
-      hasPlane: true,
+      hasPlane: false,
     },
-    a2: {
+    a13: {
       rotationSym: 2,
-      axisRotation: axisRotations.a2,
+      axisRotation: axisRotations.a13,
       rotationColor: rotColor,
       planeColor: pColor,
       axisColor: axColor,
       planes: [planeRotations.four],
-      hasPlane: true,
+      hasPlane: false,
     },
-    a3: {
+    a23: {
       rotationSym: 2,
-      axisRotation: axisRotations.a3,
+      axisRotation: axisRotations.a23,
       rotationColor: rotColor,
       planeColor: pColor,
       axisColor: axColor,
       planes: [planeRotations.four],
-      hasPlane: true,
+      hasPlane: false,
     },
     z: {
       rotationSym: 3,
@@ -41,8 +41,12 @@ const rhombohedralAxes = {
       rotationColor: rotColor,
       planeColor: pColor,
       axisColor: axColor,
-      planes: [],
-      hasPlane: false,
+      planes: [
+        planeRotations.three3,
+        planeRotations.three4,
+        planeRotations.three5,
+      ],
+      hasPlane: true,
     },
   },
   _3m: {
@@ -127,7 +131,7 @@ const rhombohedralAxes = {
   },
   _3bar: {
     a1: {
-      rotationSym: 2,
+      rotationSym: 1,
       axisRotation: axisRotations.a1,
       rotationColor: rotColor,
       planeColor: pColor,
@@ -136,7 +140,7 @@ const rhombohedralAxes = {
       hasPlane: false,
     },
     a2: {
-      rotationSym: 2,
+      rotationSym: 1,
       axisRotation: axisRotations.a2,
       rotationColor: rotColor,
       planeColor: pColor,

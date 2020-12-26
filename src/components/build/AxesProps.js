@@ -28,6 +28,9 @@ const planeRotations = {
   three0: [0, 0, 0],
   three1: [0, Math.PI / 3, 0],
   three2: [0, (2 * Math.PI) / 3, 0],
+  three3: [0, Math.PI / 6, 0],
+  three4: [0, (3 * Math.PI) / 6, 0],
+  three5: [0, (5 * Math.PI) / 6, 0],
 };
 
 // const pColor = "#BDEFEA";

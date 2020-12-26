@@ -3,6 +3,11 @@ import Display from "./Display";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faArrowCircleRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const StyledButton = withStyles({
   root: {
@@ -36,7 +41,7 @@ function Card(props) {
   return (
     <div className="home-card">
       <div className="home-card-group">
-        <Display orbit={true}>{props.children}</Display>
+        <Display orbit={false}>{props.children}</Display>
       </div>
       <div className="home-card-container">
         <h4>
@@ -55,7 +60,7 @@ function Card(props) {
           component={Link}
           to={props.route}
         >
-          <b>{props.button_text}</b>
+          <FontAwesomeIcon icon={faArrowRight} />
         </StyledButton>
         {/*
         <button className="home-card-button">{props.button_text}</button>

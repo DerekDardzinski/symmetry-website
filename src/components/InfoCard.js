@@ -36,7 +36,7 @@ function InfoCard(props) {
   return (
     <div className="home-card">
       <div className="home-card-group">
-        <Display orbit={true}>{props.children}</Display>
+        <Display orbit={false}>{props.children}</Display>
       </div>
       <div className="home-card-container">
         <h4>

@@ -26,6 +26,24 @@ const tetragonalAxes = {
       planes: [planeRotations.four],
       hasPlane: true,
     },
+    xy: {
+      rotationSym: 2,
+      axisRotation: axisRotations.xy,
+      rotationColor: rotColor,
+      planeColor: pColor,
+      axisColor: axColor,
+      planes: [planeRotations.four],
+      hasPlane: true,
+    },
+    nxy: {
+      rotationSym: 2,
+      axisRotation: axisRotations.nxy,
+      rotationColor: rotColor,
+      planeColor: pColor,
+      axisColor: axColor,
+      planes: [planeRotations.four],
+      hasPlane: true,
+    },
     z: {
       rotationSym: 2,
       axisRotation: axisRotations.z,
@@ -38,7 +56,7 @@ const tetragonalAxes = {
   },
   _4bar2m: {
     x: {
-      rotationSym: 1,
+      rotationSym: 2,
       axisRotation: axisRotations.x,
       rotationColor: rotColor,
       planeColor: pColor,
@@ -47,7 +65,7 @@ const tetragonalAxes = {
       hasPlane: false,
     },
     y: {
-      rotationSym: 1,
+      rotationSym: 2,
       axisRotation: axisRotations.y,
       rotationColor: rotColor,
       planeColor: pColor,
@@ -56,7 +74,7 @@ const tetragonalAxes = {
       hasPlane: false,
     },
     z: {
-      rotationSym: 2,
+      rotationSym: 4,
       axisRotation: axisRotations.z,
       rotationColor: rotColor,
       planeColor: pColor,

@@ -9,11 +9,24 @@ import {
   Hexagonal6bar,
   Hexagonal6,
 } from "../components/groups/Hexagonal";
+import HexagonalCell from "../components/build/unitCells/HexagonalCell";
+import InfoCard from "../components/InfoCard";
 
 function HexagonalPage() {
   return (
     <div className="home-main">
       <div className="home-grid">
+        <InfoCard
+          title="Hexagonal"
+          button_text="explore"
+          route="/cubic/23"
+          left_side={
+            "a = b = c; \u03B1 = \u03B2 = 90\u00B0, \u03B3 = 120\u00B0"
+          }
+          group_name="12"
+        >
+          <HexagonalCell />
+        </InfoCard>
         <Card
           title="6"
           button_text="explore"

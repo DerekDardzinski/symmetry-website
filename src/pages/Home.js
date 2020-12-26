@@ -44,6 +44,7 @@ import {
   Cubic23,
 } from "../components/groups/Cubic";
 import Text from "../components/build/Question";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Home() {
   const a = (
@@ -53,11 +54,6 @@ function Home() {
   );
   return (
     <div className="home-main">
-      {/*
-      <div className="home-header">
-        <p className="home-title">Experience Point Groups in 3D</p>
-      </div>
-      */}
       <div className="home-grid">
         <Card title="About" button_text="explore" route="/about">
           <Text />

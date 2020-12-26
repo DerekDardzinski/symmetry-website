@@ -19,7 +19,6 @@ const RhombohedralCell = () => {
   const a = edgeLength;
   const b = edgeLength;
   const c = edgeLength;
-  const shift = edgeLength / 2;
   const points = [
     [0, 0, 0],
     [a * Math.sin(Math.PI / 12), b * Math.cos(Math.PI / 12), 0],
@@ -55,8 +54,8 @@ const RhombohedralCell = () => {
     [a * Math.cos(Math.PI / 12), b * Math.sin(Math.PI / 12), 0],
   ];
   return (
-    <group rotation={[Math.PI / 2, 0, 0]}>
-      <group position={[-(a + shift) / 2, -(b + shift) / 2, -(c + shift) / 2]}>
+    <group rotation={[0, Math.PI / 48, Math.PI / 4]}>
+      <group position={[-a / 1.5, -b / 1.5, -c / 2]}>
         <Line
           points={points} // Array of points
           color="grey" // Default
