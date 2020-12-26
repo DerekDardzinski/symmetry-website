@@ -11,7 +11,7 @@ import TetragonalPage from "./pages/TetragonalPage";
 import CubicPage from "./pages/CubicPage";
 import "./App.css";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Link,
