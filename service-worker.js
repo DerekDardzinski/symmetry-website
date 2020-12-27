@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/symmetry-website/precache-manifest.b19445237d03e44b488c158068ec37d2.js"
+  "/symmetry-website/precache-manifest.dd1eb66081f9c564fa05f09cd4715325.js"
 );
 
 self.addEventListener('message', (event) => {
