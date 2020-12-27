@@ -16,7 +16,6 @@ function Triclinic1() {
   });
   let axes = [];
   Object.entries(triclinicAxis._p1).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -40,7 +39,6 @@ function Triclinic1bar() {
   });
   let axes = [];
   Object.entries(triclinicAxis._p1).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

@@ -16,7 +16,6 @@ function Cubicm3barm() {
   });
   let axes = [];
   Object.entries(cubicAxis._m3barm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -36,7 +35,6 @@ function Cubic4bar3m() {
   });
   let axes = [];
   Object.entries(cubicAxis._4bar3m).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -56,7 +54,6 @@ function Cubic432() {
   });
   let axes = [];
   Object.entries(cubicAxis._432).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -76,7 +73,6 @@ function Cubicm3bar() {
   });
   let axes = [];
   Object.entries(cubicAxis._m3bar).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -96,7 +92,6 @@ function Cubic23() {
   });
   let axes = [];
   Object.entries(cubicAxis._23).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

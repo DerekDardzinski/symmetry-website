@@ -20,7 +20,6 @@ function Rhombohedral3barm() {
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3barm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -44,7 +43,6 @@ function Rhombohedral3m() {
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3m).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -68,7 +66,6 @@ function Rhombohedral32() {
   });
   let axes = [];
   Object.entries(rhombohedralAxis._32).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -92,7 +89,6 @@ function Rhombohedral3bar() {
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3bar).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -116,7 +112,6 @@ function Rhombohedral3() {
   });
   let axes = [];
   Object.entries(rhombohedralAxis._3).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

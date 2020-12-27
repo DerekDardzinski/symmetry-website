@@ -85,6 +85,4 @@ function generatePointGroup(generators, generalPoint, isHexagonal) {
   }
 }
 
-console.log(generatePointGroup(generators, generalPoint, true));
-
 export default generatePointGroup;

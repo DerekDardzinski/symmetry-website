@@ -20,7 +20,6 @@ function Hexagonal6ommm() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6ommm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -44,7 +43,6 @@ function Hexagonal6barm2() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6barm2).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -64,7 +62,6 @@ function Hexagonal6mm() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6mm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -84,7 +81,6 @@ function Hexagonal622() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._622).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -104,7 +100,6 @@ function Hexagonal6om() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6om).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -128,7 +123,6 @@ function Hexagonal6bar() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6bar).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -148,7 +142,6 @@ function Hexagonal6() {
   });
   let axes = [];
   Object.entries(hexagonalAxis._6).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

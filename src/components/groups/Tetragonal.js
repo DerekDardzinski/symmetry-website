@@ -20,7 +20,6 @@ function Tetragonal4ommm() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4ommm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -44,7 +43,6 @@ function Tetragonal4bar2m() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4bar2m).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -68,7 +66,6 @@ function Tetragonal4mm() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4mm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -92,7 +89,6 @@ function Tetragonal422() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._422).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -116,7 +112,6 @@ function Tetragonal4om() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4om).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -140,7 +135,6 @@ function Tetragonal4bar() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4bar).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -160,7 +154,6 @@ function Tetragonal4() {
   });
   let axes = [];
   Object.entries(tetragonalAxis._4).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

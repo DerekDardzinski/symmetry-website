@@ -20,7 +20,6 @@ function Orthorhombicmmm() {
   });
   let axes = [];
   Object.entries(orthorhombicAxis._mmm).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -44,7 +43,6 @@ function Orthorhombicmm2() {
   });
   let axes = [];
   Object.entries(orthorhombicAxis._mm2).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -68,7 +66,6 @@ function Orthorhombic222() {
   });
   let axes = [];
   Object.entries(orthorhombicAxis._222).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (

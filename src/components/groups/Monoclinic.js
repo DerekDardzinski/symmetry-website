@@ -16,7 +16,6 @@ function Monoclinic2() {
   });
   let axes = [];
   Object.entries(monoclinicAxis._2).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -40,7 +39,6 @@ function Monoclinic2om() {
   });
   let axes = [];
   Object.entries(monoclinicAxis._2om).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
@@ -60,7 +58,6 @@ function Monoclinicm() {
   });
   let axes = [];
   Object.entries(monoclinicAxis._m).forEach(([key, value]) => {
-    console.log(key);
     axes.push(<AxisLine props={value} />);
   });
   return (
