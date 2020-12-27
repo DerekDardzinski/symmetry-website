@@ -11,7 +11,7 @@ import {
 
 const StyledButton = withStyles({
   root: {
-    backgroundColor: "rgba(162, 197, 172, 0.5)",
+    backgroundColor: "rgba(162, 197, 172, 0.9)",
     border: "none",
     padding: "15px 20px",
     textAlign: "center",

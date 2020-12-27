@@ -53,79 +53,77 @@ function Home() {
     </>
   );
   return (
-    <div className="home-main">
-      <div className="home-grid">
-        <Card
-          title="Triclinic"
-          button_text="explore"
-          route="/triclinic"
-          left_side="Group Shown: "
-          group_name="1"
-        >
-          <Triclinic1 />
-        </Card>
-        <Card
-          title="Monoclinic"
-          button_text="explore"
-          route="/monoclinic"
-          left_side="Group Shown: "
-          group_name="2"
-        >
-          <Monoclinic2 />
-        </Card>
-        <Card
-          title="Rhombohedral"
-          button_text="explore"
-          route="/rhombohedral"
-          left_side="Group Shown: "
-          group_name="3"
-        >
-          <Rhombohedral3 />
-        </Card>
-        <Card
-          title="Hexagonal"
-          button_text="explore"
-          route="/hexagonal"
-          left_side="Group Shown: "
-          group_name="6"
-        >
-          <Hexagonal6 />
-        </Card>
-        <Card
-          title="Orthorhombic"
-          button_text="explore"
-          route="/orthorhombic"
-          left_side="Group Shown: "
-          group_name="mmm"
-        >
-          <Orthorhombicmmm />
-        </Card>
-        <Card
-          title="Tetragonal"
-          button_text="explore"
-          route="/tetragonal"
-          left_side="Group Shown: "
-          group_name="4"
-        >
-          <Tetragonal4 />
-        </Card>
-        <Card
-          title="Cubic"
-          button_text="explore"
-          route="/cubic"
-          left_side="Group Shown: "
-          group_name={
-            <>
-              m<span style={{ textDecoration: "overline" }}>3</span>
-            </>
-          }
-        >
-          <Cubicm3bar />
-        </Card>
-        <Card title="About" button_text="explore" route="/about">
-          <Text />
-        </Card>
-      </div>
+    <div className="home-grid">
+      <Card
+        title="Triclinic"
+        button_text="explore"
+        route="/triclinic"
+        left_side="Group Shown: "
+        group_name="1"
+      >
+        <Triclinic1 />
+      </Card>
+      <Card
+        title="Monoclinic"
+        button_text="explore"
+        route="/monoclinic"
+        left_side="Group Shown: "
+        group_name="2"
+      >
+        <Monoclinic2 />
+      </Card>
+      <Card
+        title="Rhombohedral"
+        button_text="explore"
+        route="/rhombohedral"
+        left_side="Group Shown: "
+        group_name="3"
+      >
+        <Rhombohedral3 />
+      </Card>
+      <Card
+        title="Hexagonal"
+        button_text="explore"
+        route="/hexagonal"
+        left_side="Group Shown: "
+        group_name="6"
+      >
+        <Hexagonal6 />
+      </Card>
+      <Card
+        title="Orthorhombic"
+        button_text="explore"
+        route="/orthorhombic"
+        left_side="Group Shown: "
+        group_name="mmm"
+      >
+        <Orthorhombicmmm />
+      </Card>
+      <Card
+        title="Tetragonal"
+        button_text="explore"
+        route="/tetragonal"
+        left_side="Group Shown: "
+        group_name="4"
+      >
+        <Tetragonal4 />
+      </Card>
+      <Card
+        title="Cubic"
+        button_text="explore"
+        route="/cubic"
+        left_side="Group Shown: "
+        group_name={
+          <>
+            m<span style={{ textDecoration: "overline" }}>3</span>
+          </>
+        }
+      >
+        <Cubicm3bar />
+      </Card>
+      <Card title="About" button_text="explore" route="/about">
+        <Text />
+      </Card>
     </div>
   );
 }
