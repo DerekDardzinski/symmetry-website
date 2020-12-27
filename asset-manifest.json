@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/symmetry-website/static/css/main.d96a9170.chunk.css",
-    "main.js": "/symmetry-website/static/js/main.bd014eff.chunk.js",
-    "main.js.map": "/symmetry-website/static/js/main.bd014eff.chunk.js.map",
+    "main.css": "/symmetry-website/static/css/main.ee0b2070.chunk.css",
+    "main.js": "/symmetry-website/static/js/main.55afd263.chunk.js",
+    "main.js.map": "/symmetry-website/static/js/main.55afd263.chunk.js.map",
     "runtime-main.js": "/symmetry-website/static/js/runtime-main.c43a96b1.js",
     "runtime-main.js.map": "/symmetry-website/static/js/runtime-main.c43a96b1.js.map",
     "static/css/2.2a86faee.chunk.css": "/symmetry-website/static/css/2.2a86faee.chunk.css",
     "static/js/2.73fec9df.chunk.js": "/symmetry-website/static/js/2.73fec9df.chunk.js",
     "static/js/2.73fec9df.chunk.js.map": "/symmetry-website/static/js/2.73fec9df.chunk.js.map",
     "index.html": "/symmetry-website/index.html",
-    "precache-manifest.52cca274353498457f4b10b525d760c9.js": "/symmetry-website/precache-manifest.52cca274353498457f4b10b525d760c9.js",
+    "precache-manifest.0be2888ef8053c5e40635fde25464b27.js": "/symmetry-website/precache-manifest.0be2888ef8053c5e40635fde25464b27.js",
     "service-worker.js": "/symmetry-website/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/symmetry-website/static/css/2.2a86faee.chunk.css.map",
-    "static/css/main.d96a9170.chunk.css.map": "/symmetry-website/static/css/main.d96a9170.chunk.css.map",
+    "static/css/main.ee0b2070.chunk.css.map": "/symmetry-website/static/css/main.ee0b2070.chunk.css.map",
     "static/js/2.73fec9df.chunk.js.LICENSE.txt": "/symmetry-website/static/js/2.73fec9df.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c43a96b1.js",
     "static/css/2.2a86faee.chunk.css",
     "static/js/2.73fec9df.chunk.js",
-    "static/css/main.d96a9170.chunk.css",
-    "static/js/main.bd014eff.chunk.js"
+    "static/css/main.ee0b2070.chunk.css",
+    "static/js/main.55afd263.chunk.js"
   ]
 }
