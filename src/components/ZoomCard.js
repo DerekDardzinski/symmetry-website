@@ -8,9 +8,7 @@ function ZoomCard(props) {
         <Display orbit={true}>{props.children}</Display>
       </div>
       <div className="zoom-card-container">
-        <h4>
-          <b>{props.title}</b>
-        </h4>
+        <b>{props.title}</b>
       </div>
       <div className="zoom-card-info">
         <div
