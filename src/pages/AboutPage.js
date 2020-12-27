@@ -63,6 +63,17 @@ function AboutPage(props) {
           De Graef, Marc. "A novel way to represent the 32 crystallographic
           point groups." JOURNAL OF MATERIALS EDUCATION 20 (1999): 31-42.
         </p>
+        <h5>
+          <b>Performance:</b>
+        </h5>
+        <p className="about-text">
+          If you find that the performance of this website is slow, you might
+          need to activate hardware acceleration:
+        </p>
+        <p>
+          Settings {"\u2192"} Advanced {"\u2192"} System {"\u2192"} Use hardware
+          acceleration
+        </p>
       </div>
     </div>
   );
