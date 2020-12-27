@@ -11,7 +11,7 @@ import {
 
 const StyledButton = withStyles({
   root: {
-    backgroundColor: "rgba(162, 197, 172, 0.9)",
+    backgroundColor: "#9db5b2",
     border: "none",
     padding: "15px 20px",
     textAlign: "center",
@@ -28,7 +28,7 @@ const StyledButton = withStyles({
     fontFamily: "Montserrat, serif",
     "&:hover": {
       // boxShadow: "0 8px 20px 0 rgba(0, 0, 0, 0.2)",
-      backgroundColor: "rgba(162, 197, 172, 0.9)",
+      backgroundColor: "#eeeeee",
       color: "black",
     },
   },

@@ -76,29 +76,50 @@ function App() {
   return (
     <div className="App">
       <div className="home-main">
-        <Navbar
-          collapseOnSelect
-          className="nav-bar"
-          fixed="top"
-          expand="lg"
-          variant="light"
-        >
-          <Navbar.Brand href="/">Point Group Visualizer</Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/#/triclinic">Triclinic</Nav.Link>
-              <Nav.Link href="/#/monoclinic">Monoclinic</Nav.Link>
-              <Nav.Link href="/#/rhombohedral">Rhombohedral</Nav.Link>
-              <Nav.Link href="/#/hexagonal">Hexagonal</Nav.Link>
-              <Nav.Link href="/#/orthorhombic">Orthorhombic</Nav.Link>
-              <Nav.Link href="/#/tetragonal">Tetragonal</Nav.Link>
-              <Nav.Link href="/#/cubic">Cubic</Nav.Link>
-              <Nav.Link href="/#/about">About</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
         <Router basename={process.env.PUBLIC_URL}>
+          <Navbar
+            collapseOnSelect
+            className="nav-bar"
+            fixed="top"
+            expand="lg"
+            variant="light"
+          >
+            {/*
+          <Navbar.Brand href="/">Point Group Visualizer</Navbar.Brand>
+          */}
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
+                <Nav.Link as={Link} to="/triclinic">
+                  Triclinic
+                </Nav.Link>
+                <Nav.Link as={Link} to="/monoclinic">
+                  Monoclinic
+                </Nav.Link>
+                <Nav.Link as={Link} to="/rhombohedral">
+                  Rhombohedral
+                </Nav.Link>
+                <Nav.Link as={Link} to="/hexagonal">
+                  Hexagonal
+                </Nav.Link>
+                <Nav.Link as={Link} to="/orthorhombic">
+                  Orthorhombic
+                </Nav.Link>
+                <Nav.Link as={Link} to="/tetragonal">
+                  Tetragonal
+                </Nav.Link>
+                <Nav.Link as={Link} to="/cubic">
+                  Cubic
+                </Nav.Link>
+                <Nav.Link as={Link} to="/about">
+                  About
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Navbar>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={AboutPage} />
           <Route exact path="/triclinic" component={TriclinicPage} />
