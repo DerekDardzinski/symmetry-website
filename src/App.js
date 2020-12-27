@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import Zoom from "./pages/Zoom";
+import ScrollToTop from "./components/ScrolltoTop";
 import TriclinicPage from "./pages/TriclinicPage";
 import MonoclinicPage from "./pages/MonoclinicPage";
 import RhombohedralPage from "./pages/RhombohedralPage";
@@ -77,6 +78,7 @@ function App() {
     <div className="App">
       <div className="home-main">
         <Router basename={process.env.PUBLIC_URL}>
+          <ScrollToTop />
           <Navbar
             collapseOnSelect
             className="nav-bar"
