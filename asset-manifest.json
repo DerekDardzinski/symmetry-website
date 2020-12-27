@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/symmetry-website/static/css/main.3b746b55.chunk.css",
+    "main.css": "/symmetry-website/static/css/main.d96a9170.chunk.css",
     "main.js": "/symmetry-website/static/js/main.bd014eff.chunk.js",
     "main.js.map": "/symmetry-website/static/js/main.bd014eff.chunk.js.map",
     "runtime-main.js": "/symmetry-website/static/js/runtime-main.c43a96b1.js",
@@ -9,17 +9,17 @@
     "static/js/2.73fec9df.chunk.js": "/symmetry-website/static/js/2.73fec9df.chunk.js",
     "static/js/2.73fec9df.chunk.js.map": "/symmetry-website/static/js/2.73fec9df.chunk.js.map",
     "index.html": "/symmetry-website/index.html",
-    "precache-manifest.3105962c0cb1843fe2939cf5f01c7a1c.js": "/symmetry-website/precache-manifest.3105962c0cb1843fe2939cf5f01c7a1c.js",
+    "precache-manifest.52cca274353498457f4b10b525d760c9.js": "/symmetry-website/precache-manifest.52cca274353498457f4b10b525d760c9.js",
     "service-worker.js": "/symmetry-website/service-worker.js",
     "static/css/2.2a86faee.chunk.css.map": "/symmetry-website/static/css/2.2a86faee.chunk.css.map",
-    "static/css/main.3b746b55.chunk.css.map": "/symmetry-website/static/css/main.3b746b55.chunk.css.map",
+    "static/css/main.d96a9170.chunk.css.map": "/symmetry-website/static/css/main.d96a9170.chunk.css.map",
     "static/js/2.73fec9df.chunk.js.LICENSE.txt": "/symmetry-website/static/js/2.73fec9df.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c43a96b1.js",
     "static/css/2.2a86faee.chunk.css",
     "static/js/2.73fec9df.chunk.js",
-    "static/css/main.3b746b55.chunk.css",
+    "static/css/main.d96a9170.chunk.css",
     "static/js/main.bd014eff.chunk.js"
   ]
 }
