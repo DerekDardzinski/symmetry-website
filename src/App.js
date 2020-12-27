@@ -84,37 +84,34 @@ function App() {
             expand="lg"
             variant="light"
           >
-            {/*
-          <Navbar.Brand href="/">Point Group Visualizer</Navbar.Brand>
-          */}
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link as={Link} to="/">
+                <Nav.Link eventKey="1" as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/triclinic">
+                <Nav.Link eventKey="2" as={Link} to="/triclinic">
                   Triclinic
                 </Nav.Link>
-                <Nav.Link as={Link} to="/monoclinic">
+                <Nav.Link eventKey="3" as={Link} to="/monoclinic">
                   Monoclinic
                 </Nav.Link>
-                <Nav.Link as={Link} to="/rhombohedral">
+                <Nav.Link eventKey="4" as={Link} to="/rhombohedral">
                   Rhombohedral
                 </Nav.Link>
-                <Nav.Link as={Link} to="/hexagonal">
+                <Nav.Link eventKey="5" as={Link} to="/hexagonal">
                   Hexagonal
                 </Nav.Link>
-                <Nav.Link as={Link} to="/orthorhombic">
+                <Nav.Link eventKey="6" as={Link} to="/orthorhombic">
                   Orthorhombic
                 </Nav.Link>
-                <Nav.Link as={Link} to="/tetragonal">
+                <Nav.Link eventKey="7" as={Link} to="/tetragonal">
                   Tetragonal
                 </Nav.Link>
-                <Nav.Link as={Link} to="/cubic">
+                <Nav.Link eventKey="8" as={Link} to="/cubic">
                   Cubic
                 </Nav.Link>
-                <Nav.Link as={Link} to="/about">
+                <Nav.Link eventKey="9" as={Link} to="/about">
                   About
                 </Nav.Link>
               </Nav>
